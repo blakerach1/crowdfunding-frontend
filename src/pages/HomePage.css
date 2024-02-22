@@ -1,6 +1,11 @@
+body {
+  background-color: #63717b;
+}
+
 #project-list {
   display: grid;
   grid-template-columns: 30% 30% 30%;
-  column-gap: 10px;
-  row-gap: 10px;
+  grid-gap: 10px;
+  justify-content: space-around;
+  background-color: #63717b;
 }

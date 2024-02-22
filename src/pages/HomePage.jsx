@@ -13,3 +13,5 @@ function HomePage() {
 }
 
 export default HomePage;
+
+// the projectData is an object that contains the project's data and key is the index of the project in the allProjects array.
