@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 function NavBar() {
@@ -12,9 +12,11 @@ function NavBar() {
           <li>
             <Link to="/login">Log In</Link>
           </li>
+          <li>
+            <Link to="/signup">Sign Up</Link>
+          </li>
         </ul>
       </nav>
-      <Outlet />
     </div>
   );
 }
