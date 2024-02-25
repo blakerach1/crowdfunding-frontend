@@ -1,22 +1,23 @@
-async function postSignUp(username, first_name, last_name, email, password) {
-  const url = `${import.meta.env.VITE_API_URL}/users/`;
+async function postProject(title, description, goal, image) {
+  const url = `${import.meta.env.VITE_API_URL}/projects/`;
+  const token = window.localStorage.getItem("token");
 
   const response = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "Authorization": `Token ${token}`,
     },
     body: JSON.stringify({
-      username: username,
-      first_name: first_name,
-      last_name: last_name,
-      email: email,
-      password: password,
+      title: title,
+      description: description,
+      goal: parseInt(goal),
+      image: image,
     }),
   });
 
   if (!response.ok) {
-    const fallbackError = "Error trying to sign up";
+    const fallbackError = "Error trying to create project";
 
     const data = await response.json().catch(() => {
       throw new Error(fallbackError);
@@ -28,4 +29,4 @@ async function postSignUp(username, first_name, last_name, email, password) {
   return await response.json();
 }
 
-export default postSignUp;
+export default postProject;

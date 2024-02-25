@@ -15,6 +15,9 @@ function NavBar() {
           <li>
             <Link to="/signup">Sign Up</Link>
           </li>
+          <li>
+            <Link to="/create">Create</Link>
+          </li>
         </ul>
       </nav>
     </div>

@@ -7,8 +7,8 @@ function SignUpForm() {
 
   const [credentials, setCredentials] = useState({
     username: "",
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
   });
@@ -25,15 +25,15 @@ function SignUpForm() {
     event.preventDefault();
     if (
       credentials.username &&
-      credentials.firstName &&
-      credentials.lastName &&
+      credentials.first_name &&
+      credentials.last_name &&
       credentials.email &&
       credentials.password
     ) {
       postSignUp(
         credentials.username,
-        credentials.firstName,
-        credentials.lastName,
+        credentials.first_name,
+        credentials.last_name,
         credentials.email,
         credentials.password
       ).then((response) => {
@@ -56,19 +56,19 @@ function SignUpForm() {
         />
       </div>
       <div>
-        <label htmlFor="firstName">First Name:</label>
+        <label htmlFor="first_name">First Name:</label>
         <input
           type="text"
-          id="firstName"
+          id="first_name"
           placeholder="Enter First Name"
           onChange={handleChange}
         />
       </div>
       <div>
-        <label htmlFor="lastName">Last Name:</label>
+        <label htmlFor="last_name">Last Name:</label>
         <input
           type="text"
-          id="lastName"
+          id="last_name"
           placeholder="Enter Last Name"
           onChange={handleChange}
         />

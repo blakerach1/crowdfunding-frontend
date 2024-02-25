@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import ProjectCreationPage from "./pages/ProjectCreationPage";
 
 import App from "./app";
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "/", element: <HomePage /> },
       { path: "/login", element: <LoginPage /> },
       { path: "/signup", element: <SignUpPage /> },
+      { path: "/create", element: <ProjectCreationPage /> },
       { path: "/project/:id", element: <ProjectPage /> },
     ],
   },
