@@ -1,30 +1,52 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import postProject from "../api/post-project";
+import useCategories from "../hooks/use-categories";
+import "./ProjectCreationForm.css";
 
 function ProjectCreationForm() {
+  const { categories } = useCategories();
   const [project, setProject] = useState({
     title: "",
     description: "",
     goal: "",
     image: "",
+    categories: [],
   });
 
   const handleChange = (event) => {
     const { id, value } = event.target;
-    setProject((prevProject) => ({
-      ...prevProject,
-      [id]: value,
-    }));
+    if (id === "categories") {
+      const selectedCategories = Array.from(
+        event.target.selectedOptions,
+        (option) => option.text
+      );
+      setProject((prevProject) => ({
+        ...prevProject,
+        categories: selectedCategories,
+      }));
+    } else {
+      setProject((prevProject) => ({
+        ...prevProject,
+        [id]: value,
+      }));
+    }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (project.title && project.description && project.goal && project.image) {
+    if (
+      project.title &&
+      project.description &&
+      project.goal &&
+      project.image &&
+      project.categories.length > 0
+    ) {
       postProject(
         project.title,
         project.description,
         project.goal,
-        project.image
+        project.image,
+        project.categories
       ).then((response) => {
         console.log(response);
       });
@@ -69,15 +91,21 @@ function ProjectCreationForm() {
           onChange={handleChange}
         />
       </div>
-      {/* <div>
+      <div>
         <label htmlFor="categories">Project Category:</label>
-        <input
-          type="text"
+        <select
           id="categories"
-          placeholder="Choose Project Category"
+          value={project.categories}
           onChange={handleChange}
-        />
-      </div> */}
+          multiple
+        >
+          {categories.map((category) => (
+            <option key={category.id} value={category.title}>
+              {category.title}
+            </option>
+          ))}
+        </select>
+      </div>
       <button type="submit">Create Project</button>
     </form>
   );

@@ -1,4 +1,4 @@
-async function postProject(title, description, goal, image) {
+async function postProject(title, description, goal, image, categories) {
   const url = `${import.meta.env.VITE_API_URL}/projects/`;
   const token = window.localStorage.getItem("token");
 
@@ -13,6 +13,7 @@ async function postProject(title, description, goal, image) {
       description: description,
       goal: parseInt(goal),
       image: image,
+      categories: categories,
     }),
   });
 
