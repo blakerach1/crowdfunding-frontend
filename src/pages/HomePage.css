@@ -1,5 +1,6 @@
 body {
-  background-color: #63717b;
+  background-color: var(--color-main);
+  font-family: var(--main-font);
 }
 
 #project-list {
@@ -7,5 +8,5 @@ body {
   grid-template-columns: 30% 30% 30%;
   grid-gap: 10px;
   justify-content: space-around;
-  background-color: #63717b;
+  background-color: var(--color-main);
 }

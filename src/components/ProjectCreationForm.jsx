@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import postProject from "../api/post-project";
 import useCategories from "../hooks/use-categories";
-import "./ProjectCreationForm.css";
 
 function ProjectCreationForm() {
   const { categories } = useCategories();

@@ -1,0 +1,18 @@
+:root {
+  --main-font: "DM Sans", serif;
+  --header-font: "DM Serif Display", serif;
+  --base-font-size: 16px;
+  --box-shadow: 0 2px 4px #0000001a;
+  --line-height: 1.5;
+  --font-weight-heavy: 500;
+  --font-weight-light: 300;
+  --font-style: normal;
+  --color-main: #879aac;
+  --color-dark-accent-1: #746f67;
+  --color-dark-accent-2: #373e4a;
+  --color-light-accent-1: #8e8eb6;
+  --color-light-accent-2: #b6b6d8;
+  --color-dark-shades: #373e4a;
+  --color-light-shades: #f8f7f6;
+  --color-link-underline: underline;
+}

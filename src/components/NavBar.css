@@ -2,8 +2,8 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 1rem 2rem;
-  background-color: #a7bbbe;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-dark-shades);
+  box-shadow: var(--box-shadow);
   margin-bottom: 25px;
 }
 
@@ -20,7 +20,11 @@ li {
 
 li a {
   text-decoration: none;
-  color: #333;
+  color: var(--color-light-accent-2);
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-heavy);
+}
+
+li a:hover {
+  color: var(--color-light-shades);
 }
