@@ -1,4 +1,5 @@
 import { useState } from "react";
+import postPledge from "../api/post-pledge";
 
 function PledgeCreationForm(props) {
   const [pledge, setPledges] = useState({
@@ -15,6 +16,21 @@ function PledgeCreationForm(props) {
       ...prevPledge,
       [id]: value,
     }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (pledge.amount && pledge.comment && pledge.anonymous) {
+      postPledge(
+        pledge.amount,
+        pledge.comment,
+        pledge.anonymous,
+        pledge.project,
+        pledge.supporter
+      ).then((response) => {
+        console.log(response);
+      });
+    }
   };
 
   return (
