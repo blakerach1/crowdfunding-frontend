@@ -31,7 +31,7 @@ function ProjectPage() {
           );
         })}
       </ul>
-      <PledgeCreationForm projectId={id} />
+      <PledgeCreationForm project={id} />
     </div>
   );
 }
