@@ -3,7 +3,15 @@ import useProjects from "../hooks/use-projects";
 import "./HomePage.css"; // import the HomePage.css file
 
 function HomePage() {
-  const { projects } = useProjects(); // use the useProjects hook to get the projects
+  const { projects, isLoading, error } = useProjects(); // use the useProjects hook to get the projects
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error.message}</p>;
+  }
 
   return (
     <div id="project-list">

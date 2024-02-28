@@ -11,7 +11,9 @@ function PledgeCreationForm(props) {
   });
 
   const handleChange = (event) => {
-    const { id, value } = event.target;
+    const { id, type } = event.target;
+    const value =
+      type === "checkbox" ? event.target.checked : event.target.value;
     setPledges((prevPledge) => ({
       ...prevPledge,
       [id]: value,
@@ -20,7 +22,7 @@ function PledgeCreationForm(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (pledge.amount && pledge.comment && pledge.anonymous) {
+    if (pledge.amount && pledge.comment) {
       postPledge(
         pledge.amount,
         pledge.comment,
@@ -29,6 +31,12 @@ function PledgeCreationForm(props) {
         pledge.supporter
       ).then((response) => {
         console.log(response);
+        // clear form fields
+        setPledges({
+          amount: "",
+          comment: "",
+          anonymous: false,
+        });
       });
     }
   };
@@ -57,6 +65,7 @@ function PledgeCreationForm(props) {
         <label htmlFor="anonymous">Pledge Anonymously:</label>
         <input type="checkbox" id="anonymous" onChange={handleChange} />
       </div>
+      <button type="submit">Create Pledge</button>
     </form>
   );
 }
