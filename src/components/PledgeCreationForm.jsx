@@ -39,6 +39,7 @@ function PledgeCreationForm(props) {
           project: props.project,
           supporter: "",
         });
+        location.reload();
       });
     }
   };
