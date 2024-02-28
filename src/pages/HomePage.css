@@ -10,3 +10,9 @@ body {
   justify-content: space-around;
   background-color: var(--color-main);
 }
+
+#pledge-list {
+  display: flexbox;
+  flex-direction: column;
+  background-color: var(--color-main);
+}

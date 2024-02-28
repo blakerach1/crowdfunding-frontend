@@ -36,18 +36,21 @@ function PledgeCreationForm(props) {
           amount: "",
           comment: "",
           anonymous: false,
+          project: props.project,
+          supporter: "",
         });
       });
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div>
         <label htmlFor="amount">Pledge Amount ($):</label>
         <input
           type="text"
           id="amount"
+          value={pledge.amount}
           placeholder="Enter Pledge Amount"
           onChange={handleChange}
         />
@@ -57,15 +60,23 @@ function PledgeCreationForm(props) {
         <input
           type="text"
           id="comment"
+          value={pledge.comment}
           placeholder="Enter Comment"
           onChange={handleChange}
         />
       </div>
       <div>
         <label htmlFor="anonymous">Pledge Anonymously:</label>
-        <input type="checkbox" id="anonymous" onChange={handleChange} />
+        <input
+          type="checkbox"
+          id="anonymous"
+          value={pledge.anonymous}
+          onChange={handleChange}
+        />
       </div>
-      <button type="submit">Create Pledge</button>
+      <button type="submit" onClick={handleSubmit}>
+        Create Pledge
+      </button>
     </form>
   );
 }
