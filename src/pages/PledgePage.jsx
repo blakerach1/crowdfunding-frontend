@@ -2,6 +2,7 @@ import EditPledgeForm from "../components/PledgeEditForm";
 import usePledge from "../hooks/use-pledge";
 import { useParams } from "react-router-dom";
 import SupporterName from "../components/Supporter";
+import { formatCurrency } from "../utils/FormatFunctions";
 
 function PledgePage() {
   const { id } = useParams();
@@ -17,7 +18,7 @@ function PledgePage() {
 
   return (
     <div>
-      <p>{pledge.amount}</p>
+      <p>{formatCurrency(pledge.amount)}</p>
       <p>{pledge.comment}</p>
       {/* if not anonymous, show supporter name */}
       {pledge.anonymous ? (

@@ -7,7 +7,7 @@ export default function usePledge(pledgeId) {
   const [error, setError] = useState();
 
   useEffect(() => {
-    // Here we pass the pledgeID to the putPledge function.
+    // Here we pass the pledgeID to the getPledge function.
     getPledge(pledgeId)
       .then((pledge) => {
         setPledge(pledge);

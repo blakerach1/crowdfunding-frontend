@@ -1,4 +1,4 @@
-async function putPledge(comment, anonymous) {
+async function putPledge(pledgeId, comment, anonymous) {
   const url = `${import.meta.env.VITE_API_URL}/pledges/${pledgeId}`;
   const token = window.localStorage.getItem("token");
 

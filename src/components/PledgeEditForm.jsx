@@ -1,23 +1,21 @@
 import { useState } from "react";
 import putPledge from "../api/put-pledge";
-import useAuth from "../hooks/use-auth";
+// import useAuth from "../hooks/use-auth";
 
-function EditPledgeForm(props) {
-  const { auth } = useAuth();
-
-  const [pledge, setPledges] = useState({
-    amount: props.amount,
-    comment: props.comment,
-    anonymous: props.anonymous,
-    project: props.project,
-    supporter: props.user_id,
+function EditPledgeForm({ pledge }) {
+  const [updatedPledge, updatePledge] = useState({
+    amount: pledge.amount,
+    comment: pledge.comment,
+    anonymous: pledge.anonymous,
+    project: pledge.project,
+    supporter: pledge.user_id,
   });
 
   const handleChange = (event) => {
     const { id, type } = event.target;
     const value =
       type === "checkbox" ? event.target.checked : event.target.value;
-    setPledges((prevPledge) => ({
+    updatePledge((prevPledge) => ({
       ...prevPledge,
       [id]: value,
     }));
@@ -25,13 +23,19 @@ function EditPledgeForm(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (pledge.amount && pledge.comment) {
+    if (
+      updatedPledge.anonymous === undefined
+        ? pledge.anonymous
+        : updatedPledge.anonymous && updatedPledge.comment
+    );
+    {
       putPledge(
-        pledge.amount,
-        pledge.comment,
-        pledge.anonymous,
-        pledge.project,
-        pledge.supporter
+        pledge.id,
+        updatedPledge.amount,
+        updatedPledge.comment,
+        updatedPledge.anonymous,
+        updatedPledge.project,
+        updatedPledge.supporter
       ).then((Response) => {
         console.log(Response);
       });
@@ -41,22 +45,14 @@ function EditPledgeForm(props) {
   return (
     <form>
       <div>
-        <label htmlFor="amount">Pledge Amount ($):</label>
-        <input
-          type="text"
-          id="amount"
-          value={pledge.amount}
-          placeholder="Enter Pledge Amount"
-          onChange={handleChange}
-          readOnly
-        />
+        <p>Pledge Amount ($): {pledge.amount}</p>
       </div>
       <div>
         <label htmlFor="comment">Comment:</label>
         <textarea
           id="comment"
-          value={pledge.comment}
-          placeholder="Enter Comment"
+          value={updatedPledge.comment}
+          placeholder={pledge.comment}
           onChange={handleChange}
         />
       </div>
@@ -65,7 +61,7 @@ function EditPledgeForm(props) {
         <input
           type="checkbox"
           id="anonymous"
-          checked={pledge.anonymous}
+          value={updatedPledge.anonymous}
           onChange={handleChange}
         />
       </div>
