@@ -1,15 +1,16 @@
 import { useState } from "react";
-import postPledge from "../api/post-pledge";
+import putPledge from "../api/put-pledge";
 import useAuth from "../hooks/use-auth";
 
-function PledgeCreationForm(props) {
+function EditPledgeForm(props) {
   const { auth } = useAuth();
+
   const [pledge, setPledges] = useState({
-    amount: "",
-    comment: "",
-    anonymous: false,
-    project: props.project, // need to figure our how to get the project id from url
-    supporter: auth.user_id, // need to figure out how to get the user id from the token
+    amount: props.amount,
+    comment: props.comment,
+    anonymous: props.anonymous,
+    project: props.project,
+    supporter: props.user_id,
   });
 
   const handleChange = (event) => {
@@ -25,23 +26,14 @@ function PledgeCreationForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (pledge.amount && pledge.comment) {
-      postPledge(
+      putPledge(
         pledge.amount,
         pledge.comment,
         pledge.anonymous,
         pledge.project,
         pledge.supporter
-      ).then((response) => {
-        console.log(response);
-        // clear form fields
-        setPledges({
-          amount: "",
-          comment: "",
-          anonymous: false,
-          project: props.project,
-          supporter: auth.user_id,
-        });
-        location.reload();
+      ).then((Response) => {
+        console.log(Response);
       });
     }
   };
@@ -56,12 +48,12 @@ function PledgeCreationForm(props) {
           value={pledge.amount}
           placeholder="Enter Pledge Amount"
           onChange={handleChange}
+          readOnly
         />
       </div>
       <div>
         <label htmlFor="comment">Comment:</label>
-        <input
-          type="text"
+        <textarea
           id="comment"
           value={pledge.comment}
           placeholder="Enter Comment"
@@ -69,19 +61,17 @@ function PledgeCreationForm(props) {
         />
       </div>
       <div>
-        <label htmlFor="anonymous">Pledge Anonymously:</label>
+        <label htmlFor="anonymous">Anonymous:</label>
         <input
           type="checkbox"
           id="anonymous"
-          value={pledge.anonymous}
+          checked={pledge.anonymous}
           onChange={handleChange}
         />
       </div>
-      <button type="submit" onClick={handleSubmit}>
-        Create Pledge
-      </button>
+      <button onClick={handleSubmit}>Update Pledge</button>
     </form>
   );
 }
 
-export default PledgeCreationForm;
+export default EditPledgeForm;

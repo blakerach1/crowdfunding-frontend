@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
+import { Link } from "react-router-dom";
 
 import SupporterName from "../components/Supporter";
 import PledgeCreationForm from "../components/PledgeCreationForm";
@@ -68,6 +69,7 @@ function ProjectPage() {
               <p>{dollars.format(pledgeData.amount)}</p>
               <p>{formatTimeAgo(pledgeData.pledge_date)}</p>
               <p>Comment: {pledgeData.comment}</p>
+              <Link to={`/pledge/${pledgeData.id}`}>Edit</Link>
             </li>
           );
         })}
