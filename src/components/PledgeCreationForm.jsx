@@ -14,6 +14,7 @@ function PledgeCreationForm(props) {
 
   const handleChange = (event) => {
     const { id, type } = event.target;
+    console.log(event.target);
     const value =
       type === "checkbox" ? event.target.checked : event.target.value;
     setPledges((prevPledge) => ({

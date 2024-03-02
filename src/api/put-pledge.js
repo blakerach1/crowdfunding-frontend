@@ -1,6 +1,15 @@
-async function putPledge(pledgeId, comment, anonymous) {
+async function putPledge(
+  pledgeId,
+  amount,
+  comment,
+  anonymous,
+  project,
+  supporter
+) {
   const url = `${import.meta.env.VITE_API_URL}/pledges/${pledgeId}`;
   const token = window.localStorage.getItem("token");
+
+  // add try catch, wrap it over the entire response
 
   const response = await fetch(url, {
     method: "PUT",
@@ -9,8 +18,11 @@ async function putPledge(pledgeId, comment, anonymous) {
       "Authorization": `Token ${token}`,
     },
     body: JSON.stringify({
+      amount: amount,
       comment: comment,
       anonymous: anonymous,
+      project: project,
+      supporter: supporter,
     }),
   });
 
@@ -28,3 +40,7 @@ async function putPledge(pledgeId, comment, anonymous) {
 }
 
 export default putPledge;
+
+// the throw new Error can't pass in an object, only a string
+// packages, in typescript has inbuilt error
+// google logging with vanilla JS

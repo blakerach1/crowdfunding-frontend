@@ -8,8 +8,10 @@ function EditPledgeForm({ pledge }) {
     comment: pledge.comment,
     anonymous: pledge.anonymous,
     project: pledge.project,
-    supporter: pledge.user_id,
+    supporter: pledge.supporter,
   });
+
+  console.log("edit form pledge", pledge);
 
   const handleChange = (event) => {
     const { id, type } = event.target;
@@ -21,14 +23,20 @@ function EditPledgeForm({ pledge }) {
     }));
   };
 
+  console.log(updatedPledge);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (
-      updatedPledge.anonymous === undefined
-        ? pledge.anonymous
-        : updatedPledge.anonymous && updatedPledge.comment
-    );
-    {
+
+    const isValid =
+      !!updatedPledge.amount &&
+      !!updatedPledge.comment &&
+      !!updatedPledge.project &&
+      !!updatedPledge.supporter;
+
+    console.log("is valid payload", isValid);
+
+    if (isValid) {
       putPledge(
         pledge.id,
         updatedPledge.amount,

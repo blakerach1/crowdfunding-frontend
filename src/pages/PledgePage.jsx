@@ -16,6 +16,8 @@ function PledgePage() {
     return <p>{error.message}</p>;
   }
 
+  console.log("pledge object", pledge);
+
   return (
     <div>
       <p>{formatCurrency(pledge.amount)}</p>
