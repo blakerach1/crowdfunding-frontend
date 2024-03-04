@@ -6,9 +6,9 @@ import {
   formatTimeAgo,
   formatDate,
 } from "../utils/FormatFunctions";
-
 import SupporterName from "../components/Pledges/Supporter";
 import PledgeCreationForm from "../components/Pledges/PledgeCreationForm";
+import "../components/Projects/ProjectPage.css";
 
 function ProjectPage() {
   // Here we use a hook that comes for free in react router called 'useParams' to get the id from the URL so that we can pass it to our useProject hook.
@@ -26,7 +26,7 @@ function ProjectPage() {
 
   return (
     <div>
-      <div>
+      <div className="projectPage">
         <h2>{project.title}</h2>
         <img src={project.image} alt={project.title} />
         <h3>{project.description}</h3>
@@ -35,9 +35,9 @@ function ProjectPage() {
         <h3>Goal: {formatCurrency(project.goal)}</h3>
         <h3>Pledged to Date: {formatCurrency(sumOfPledges)}</h3>
       </div>
-      <div>
+      <div className="projectPledgeList">
         <h3>Supporters</h3>
-        <ul id="pledge-list">
+        <ul className="pledgeListing">
           {project.pledges.map((pledgeData, key) => {
             return (
               <li key={key}>
