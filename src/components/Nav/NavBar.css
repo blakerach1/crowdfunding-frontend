@@ -2,28 +2,28 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 1rem 2rem;
+  padding: 2rem;
   background-color: var(--color-light-shades);
   box-shadow: var(--box-shadow);
-  margin-bottom: 25px;
 }
 
-ul {
+nav ul {
   gap: 1rem;
 }
 
-li {
+nav li {
   margin-top: 0.5rem;
   list-style: none;
+  text-align: right;
 }
 
-li a {
+nav li a {
   text-decoration: none;
   color: var(--color-dark-shades);
-  font-size: 1.3rem;
+  font-size: var(--a-font-size);
   font-weight: var(--font-weight-heavy);
 }
 
-li a:hover {
+nav li a:hover {
   color: var(--color-light-accent-1);
 }

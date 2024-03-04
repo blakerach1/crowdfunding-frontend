@@ -27,29 +27,45 @@ function ProjectPage() {
   return (
     <div>
       <div className="projectPage">
-        <h2>{project.title}</h2>
-        <img src={project.image} alt={project.title} />
-        <h3>{project.description}</h3>
-        <p>Created at: {formatDate(project.date_created)}</p>
-        <p>{`Status: ${project.is_open ? "Active" : "Inactive"}`}</p>
-        <h3>Goal: {formatCurrency(project.goal)}</h3>
-        <h3>Pledged to Date: {formatCurrency(sumOfPledges)}</h3>
+        <h3>{project.title}</h3>
+        <div className="projectPanel">
+          <img src={project.image} alt={project.title} />
+          <p>{project.description}</p>
+          <div className="fundingProgress">
+            <p>Goal: {formatCurrency(project.goal)}</p>
+            <p>Pledged to Date: {formatCurrency(sumOfPledges)}</p>
+          </div>
+        </div>
+        <div className="projectStats">
+          <p>Launched: {formatDate(project.date_created)}</p>
+          <p>{`Status: ${project.is_open ? "Active" : "Inactive"}`}</p>
+        </div>
       </div>
       <div className="projectPledgeList">
         <h3>Supporters</h3>
-        <ul className="pledgeListing">
-          {project.pledges.map((pledgeData, key) => {
-            return (
-              <li key={key}>
-                <SupporterName userId={pledgeData.supporter} />
-                <p>{formatCurrency(pledgeData.amount)}</p>
-                <p>{formatTimeAgo(pledgeData.pledge_date)}</p>
-                <p>Comment: {pledgeData.comment}</p>
-                <Link to={`/pledges/${pledgeData.id}`}>Edit</Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="pledgeListing">
+          <ul>
+            {project.pledges.map((pledgeData, key) => {
+              return (
+                <li key={key}>
+                  <Link to={`/pledges/${pledgeData.id}`}>
+                    <SupporterName userId={pledgeData.supporter} />
+                    <p>{formatCurrency(pledgeData.amount)}</p>
+                    <p className="pledgedAgo">
+                      Pledged: {formatTimeAgo(pledgeData.pledge_date)}
+                    </p>
+                    <p>Comment: {pledgeData.comment}</p>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <img
+            src="../src/assets/river-pebbles.jpg"
+            className="pledgeImage"
+            alt="Picture of River Pebbles"
+          />
+        </div>
       </div>
       <PledgeCreationForm project={id} />
     </div>

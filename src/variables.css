@@ -1,7 +1,8 @@
 :root {
-  --main-font: "DM Sans", serif;
-  --header-font: "DM Serif Display", serif;
+  --main-font: "Ubuntu", sans-serif;
   --base-font-size: 16px;
+  --a-font-size: 1.2rem;
+  --small-font-size: 0.833rem;
   --box-shadow: 0 2px 4px #0000001a;
   --line-height: 1.5;
   --font-weight-extra-heavy: 550;
@@ -16,4 +17,56 @@
   --color-dark-shades: #28272b;
   --color-light-shades: #f1e3d9;
   --color-link-underline: underline;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-main);
+  font-size: var(--base-font-size);
+}
+
+h1 {
+  font-size: 2.986rem;
+  color: var(--color-dark-shades);
+}
+
+h2 {
+  font-size: 2.488rem;
+  color: var(--color-dark-shades);
+}
+
+h3 {
+  font-size: 2.074rem;
+  color: var(--color-dark-shades);
+}
+
+h4 {
+  font-size: 1.728rem;
+  color: var(--color-dark-shades);
+}
+
+h5 {
+  font-size: 1.44rem;
+  color: var(--color-dark-shades);
+}
+
+p {
+  font-size: 1rem;
+  color: var(--color-dark-shades);
+}
+
+a {
+  font-size: 1rem;
 }

@@ -1,4 +1,5 @@
 import useUser from "../../hooks/use-user";
+import "./Supporter.css";
 
 function SupporterName({ userId }) {
   const { user, isLoading, error } = useUser(userId);

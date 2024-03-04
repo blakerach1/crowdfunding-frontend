@@ -1,4 +1,5 @@
 .project-card {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -8,10 +9,9 @@
   object-fit: cover;
 }
 
-.project-card h3 {
+.project-card h5 {
   margin: 0;
   padding: 1rem;
-  font-size: 1.5rem;
   font-weight: var(--font-weight-heavy);
 }
 

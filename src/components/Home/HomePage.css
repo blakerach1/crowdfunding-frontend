@@ -1,5 +1,5 @@
 body {
-  background-color: var(--color-dark-accent-1);
+  background-color: var(--color-main);
   font-family: var(--main-font);
 }
 
@@ -7,11 +7,5 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 10px;
-  background-color: var(--color-dark-accent-1);
-}
-
-#pledge-list {
-  display: flexbox;
-  flex-direction: column;
   background-color: var(--color-main);
 }
