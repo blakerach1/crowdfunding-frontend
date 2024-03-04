@@ -7,8 +7,8 @@ import {
   formatDate,
 } from "../utils/FormatFunctions";
 
-import SupporterName from "../components/Supporter";
-import PledgeCreationForm from "../components/PledgeCreationForm";
+import SupporterName from "../components/Pledges/Supporter";
+import PledgeCreationForm from "../components/Pledges/PledgeCreationForm";
 
 function ProjectPage() {
   // Here we use a hook that comes for free in react router called 'useParams' to get the id from the URL so that we can pass it to our useProject hook.
@@ -45,7 +45,7 @@ function ProjectPage() {
                 <p>{formatCurrency(pledgeData.amount)}</p>
                 <p>{formatTimeAgo(pledgeData.pledge_date)}</p>
                 <p>Comment: {pledgeData.comment}</p>
-                <Link to={`/pledge/${pledgeData.id}`}>Edit</Link>
+                <Link to={`/pledges/${pledgeData.id}`}>Edit</Link>
               </li>
             );
           })}

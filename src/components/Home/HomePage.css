@@ -1,14 +1,13 @@
 body {
-  background-color: var(--color-main);
+  background-color: var(--color-dark-accent-1);
   font-family: var(--main-font);
 }
 
 #project-list {
   display: grid;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 10px;
-  justify-content: space-around;
-  background-color: var(--color-main);
+  background-color: var(--color-dark-accent-1);
 }
 
 #pledge-list {

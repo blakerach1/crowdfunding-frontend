@@ -1,6 +1,6 @@
-import ProjectCard from "../components/ProjectCard"; // import the ProjectCard component
+import ProjectCard from "../components/Projects/ProjectCard"; // import the ProjectCard component
 import useProjects from "../hooks/use-projects";
-import "./HomePage.css"; // import the HomePage.css file
+import "../components/Home/HomePage.css"; // import the HomePage.css file
 
 function HomePage() {
   const { projects, isLoading, error } = useProjects(); // use the useProjects hook to get the projects

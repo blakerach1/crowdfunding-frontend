@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import useAuth from "../hooks/use-auth";
+import useAuth from "../../hooks/use-auth";
 import "./NavBar.css";
 
 function NavBar() {
@@ -27,9 +27,7 @@ function NavBar() {
             )}
           </li>
           <li>{!auth.token && <Link to="/signup">Sign Up</Link>}</li>
-          <li>
-            <Link to="/create">Create</Link>
-          </li>
+          <li>{auth.token && <Link to="/create">Create</Link>}</li>
         </ul>
       </nav>
     </div>

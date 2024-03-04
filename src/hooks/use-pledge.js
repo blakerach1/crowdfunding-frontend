@@ -21,5 +21,5 @@ export default function usePledge(pledgeId) {
     // This time we pass the pledgeId to the dependency array so that the hook will re-run if the pledgeId changes.
   }, [pledgeId]);
 
-  return { pledge, isLoading, error };
+  return { pledge, setPledge, isLoading, error };
 }

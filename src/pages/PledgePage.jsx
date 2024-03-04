@@ -1,12 +1,12 @@
-import EditPledgeForm from "../components/PledgeEditForm";
+import EditPledgeForm from "../components/Pledges/PledgeEditForm";
 import usePledge from "../hooks/use-pledge";
 import { useParams } from "react-router-dom";
-import SupporterName from "../components/Supporter";
+import SupporterName from "../components/Pledges/Supporter";
 import { formatCurrency } from "../utils/FormatFunctions";
 
 function PledgePage() {
   const { id } = useParams();
-  const { pledge, isLoading, error } = usePledge(id);
+  const { pledge, setPledge, isLoading, error } = usePledge(id);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -16,7 +16,9 @@ function PledgePage() {
     return <p>{error.message}</p>;
   }
 
-  console.log("pledge object", pledge);
+  const handlePledgeUpdate = (updatedPledgeData) => {
+    setPledge(updatedPledgeData);
+  };
 
   return (
     <div>
@@ -29,7 +31,7 @@ function PledgePage() {
         <SupporterName userId={pledge.supporter} />
       )}
       {/* on click of edit button, show edit form */}
-      <EditPledgeForm pledge={pledge} />
+      <EditPledgeForm pledge={pledge} onUpdate={handlePledgeUpdate} />
     </div>
   );
 }

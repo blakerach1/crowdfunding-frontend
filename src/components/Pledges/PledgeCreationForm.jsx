@@ -1,6 +1,6 @@
 import { useState } from "react";
-import postPledge from "../api/post-pledge";
-import useAuth from "../hooks/use-auth";
+import postPledge from "../../api/post-pledge";
+import useAuth from "../../hooks/use-auth";
 
 function PledgeCreationForm(props) {
   const { auth } = useAuth();

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import putPledge from "../api/put-pledge";
+import putPledge from "../../api/put-pledge";
 // import useAuth from "../hooks/use-auth";
 
-function EditPledgeForm({ pledge }) {
+function EditPledgeForm({ pledge, onUpdate }) {
   const [updatedPledge, updatePledge] = useState({
+    id: pledge.id,
     amount: pledge.amount,
     comment: pledge.comment,
     anonymous: pledge.anonymous,
@@ -23,7 +24,7 @@ function EditPledgeForm({ pledge }) {
     }));
   };
 
-  console.log(updatedPledge);
+  console.log("updated pledge", updatedPledge);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -44,8 +45,8 @@ function EditPledgeForm({ pledge }) {
         updatedPledge.anonymous,
         updatedPledge.project,
         updatedPledge.supporter
-      ).then((Response) => {
-        console.log(Response);
+      ).then((response) => {
+        onUpdate(response);
       });
     }
   };
