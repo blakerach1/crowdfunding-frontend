@@ -1,4 +1,4 @@
-import ProjectCreationForm from "../components/Pledges/PledgeCreationForm";
+import ProjectCreationForm from "../components/Projects/ProjectCreationForm";
 
 function ProjectCreationPage() {
   return <ProjectCreationForm />;

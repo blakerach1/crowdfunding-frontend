@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import postProject from "../../api/post-project";
 import useCategories from "../../hooks/use-categories";
+import { useNavigate } from "react-router-dom";
 
 function ProjectCreationForm() {
+  const navigate = useNavigate();
   const { categories } = useCategories();
   const [project, setProject] = useState({
     title: "",
@@ -47,7 +49,7 @@ function ProjectCreationForm() {
         project.image,
         project.categories
       ).then((response) => {
-        console.log(response);
+        navigate(`/project/${response.id}`);
       });
     }
   };

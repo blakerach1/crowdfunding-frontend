@@ -1,16 +1,21 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import postPledge from "../../api/post-pledge";
 import useAuth from "../../hooks/use-auth";
 
 function PledgeCreationForm(props) {
+  const { id: projectId } = useParams();
+
   const { auth } = useAuth();
   const [pledge, setPledges] = useState({
     amount: "",
     comment: "",
     anonymous: false,
-    project: props.project, // need to figure our how to get the project id from url
+    project: projectId,
     supporter: auth.user_id, // need to figure out how to get the user id from the token
   });
+
+  console.log("initial pledge values", pledge);
 
   const handleChange = (event) => {
     const { id, type } = event.target;
