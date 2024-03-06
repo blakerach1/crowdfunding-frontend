@@ -1,0 +1,38 @@
+#amount {
+  border: 5px solid var(--color-light-accent-2);
+  border-radius: 4px;
+}
+#comment {
+  border: 5px solid var(--color-light-accent-2);
+  border-radius: 4px;
+  margin-bottom: 25px;
+  padding-bottom: 20em;
+}
+
+.formDiv {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  margin-right: 25px;
+}
+
+#pledgeAnonymously {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pledgeButton {
+  background-color: var(--color-light-accent-2);
+}
+
+@media (min-width: 600px) {
+  #pledgeAnonymously {
+    justify-content: center;
+  }
+
+  #anonymous {
+    margin-left: 1em;
+  }
+}

@@ -45,7 +45,7 @@ function SignUpForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className="formDiv">
         <label htmlFor="username">Username:</label>
         <input
           type="text"
@@ -55,7 +55,7 @@ function SignUpForm() {
           autoComplete="on"
         />
       </div>
-      <div>
+      <div className="formDiv">
         <label htmlFor="first_name">First Name:</label>
         <input
           type="text"
@@ -64,7 +64,7 @@ function SignUpForm() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div className="formDiv">
         <label htmlFor="last_name">Last Name:</label>
         <input
           type="text"
@@ -73,7 +73,7 @@ function SignUpForm() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div className="formDiv">
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -83,7 +83,7 @@ function SignUpForm() {
           autoComplete="on"
         />
       </div>
-      <div>
+      <div className="formDiv">
         <label htmlFor="password">Password:</label>
         <input
           type="password"

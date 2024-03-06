@@ -8,7 +8,6 @@ const App = () => {
     <div>
       <NavBar />
       <Outlet />
-      <div>Some Footer</div>
     </div>
   );
 };

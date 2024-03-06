@@ -2,11 +2,11 @@
   --main-font: "Ubuntu", sans-serif;
   --base-font-size: 16px;
   --a-font-size: 1.2rem;
-  --small-font-size: 0.833rem;
+  --small-font-size: 0.8rem;
   --box-shadow: 0 2px 4px #0000001a;
   --line-height: 1.5;
   --font-weight-extra-heavy: 550;
-  --font-weight-heavy: 500;
+  --font-weight-heavy: 600;
   --font-weight-light: 300;
   --font-style: normal;
   --color-main: #76757f;
@@ -38,35 +38,39 @@ html {
 }
 
 h1 {
-  font-size: 2.986rem;
+  font-size: 2.388em;
   color: var(--color-dark-shades);
 }
 
 h2 {
-  font-size: 2.488rem;
+  font-size: 1.9904em;
   color: var(--color-dark-shades);
 }
 
 h3 {
-  font-size: 2.074rem;
+  font-size: 1.728em;
   color: var(--color-dark-shades);
 }
 
 h4 {
-  font-size: 1.728rem;
+  font-size: 1.3824em;
   color: var(--color-dark-shades);
 }
 
 h5 {
-  font-size: 1.44rem;
+  font-size: 1.11em;
   color: var(--color-dark-shades);
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1em;
   color: var(--color-dark-shades);
 }
 
 a {
-  font-size: 1rem;
+  font-size: 1em;
+}
+
+.boldText {
+  font-weight: 600;
 }

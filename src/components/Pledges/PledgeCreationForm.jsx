@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import postPledge from "../../api/post-pledge";
 import useAuth from "../../hooks/use-auth";
+import "./PledgeCreationForm.css";
 
 function PledgeCreationForm(props) {
   const { id: projectId } = useParams();
@@ -54,7 +55,7 @@ function PledgeCreationForm(props) {
 
   return (
     <form>
-      <div>
+      <div className="formDiv">
         <label htmlFor="amount">Pledge Amount ($):</label>
         <input
           type="text"
@@ -64,7 +65,7 @@ function PledgeCreationForm(props) {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div className="formDiv">
         <label htmlFor="comment">Comment:</label>
         <input
           type="text"
@@ -74,7 +75,7 @@ function PledgeCreationForm(props) {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div className="formDiv" id="pledgeAnonymously">
         <label htmlFor="anonymous">Pledge Anonymously:</label>
         <input
           type="checkbox"
@@ -83,7 +84,7 @@ function PledgeCreationForm(props) {
           onChange={handleChange}
         />
       </div>
-      <button type="submit" onClick={handleSubmit}>
+      <button className="pledgeButton" type="submit" onClick={handleSubmit}>
         Create Pledge
       </button>
     </form>

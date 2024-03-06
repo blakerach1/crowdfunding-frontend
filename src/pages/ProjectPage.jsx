@@ -32,13 +32,25 @@ function ProjectPage() {
           <img src={project.image} alt={project.title} />
           <p>{project.description}</p>
           <div className="fundingProgress">
-            <p>Goal: {formatCurrency(project.goal)}</p>
-            <p>Pledged to Date: {formatCurrency(sumOfPledges)}</p>
+            <p>
+              <span className="boldText">Goal:</span>{" "}
+              {formatCurrency(project.goal)}
+            </p>
+            <p>
+              <span className="boldText">Pledged to Date:</span>{" "}
+              {formatCurrency(sumOfPledges)}
+            </p>
           </div>
         </div>
         <div className="projectStats">
-          <p>Launched: {formatDate(project.date_created)}</p>
-          <p>{`Status: ${project.is_open ? "Active" : "Inactive"}`}</p>
+          <p>
+            <span className="boldText">Launched:</span>{" "}
+            {formatDate(project.date_created)}
+          </p>
+          <p>
+            <span className="boldText">Status:</span>{" "}
+            {`${project.is_open ? "Active" : "Inactive"}`}
+          </p>
         </div>
       </div>
       <div className="projectPledgeList">
@@ -60,11 +72,11 @@ function ProjectPage() {
               );
             })}
           </ul>
-          <img
-            src="../src/assets/river-pebbles.jpg"
-            className="pledgeImage"
-            alt="Picture of River Pebbles"
-          />
+          <div
+            className="backgroundImage"
+            role="img"
+            aria-label="{background picture of river pepples}"
+          ></div>
         </div>
       </div>
       <PledgeCreationForm project={id} />

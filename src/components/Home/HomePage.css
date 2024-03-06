@@ -9,3 +9,9 @@ body {
   grid-gap: 10px;
   background-color: var(--color-main);
 }
+
+@media (max-width: 400px) {
+  #project-list {
+    display: block;
+  }
+}
