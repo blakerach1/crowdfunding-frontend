@@ -2,6 +2,7 @@ import { useState } from "react";
 import postProject from "../../api/post-project";
 import useCategories from "../../hooks/use-categories";
 import { useNavigate } from "react-router-dom";
+import "./ProjectCreationForm.css";
 
 function ProjectCreationForm() {
   const navigate = useNavigate();

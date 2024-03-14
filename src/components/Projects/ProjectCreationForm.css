@@ -1,38 +1,65 @@
 form {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  width: 50%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  padding: 50px;
+  margin: 1em;
+  border: 3px solid var(--color-light-shades);
+  border-radius: 4px;
 }
 
 select {
-  width: 50%;
-  padding: 0.5rem;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  font-family: inherit;
+  font-weight: 400;
+  color: var(--color-main);
 }
 
-input[type="text"] {
-  width: 50%;
-  padding: 0.5rem;
-  margin: 8px 0;
-  display: inline-block;
+select option {
+  color: var(--color-main);
+  cursor: pointer;
+  margin: 4px 0px;
+}
+
+input[type="text"],
+input[type="url"],
+select {
+  height: 100%;
+  width: 95%;
+  padding: 10px;
+  margin: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
 }
 
 button[type="submit"] {
-  width: 50%;
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background-color: var(--color-light-accent-2);
+  color: var(--color-light-shades);
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 10em;
+  align-self: center;
+}
+
+button:hover {
+  background-color: var(--color-light-shades);
+  color: var(--color-light-accent-2);
+  font-weight: var(--font-weight-heavy);
+}
+
+@media (min-width: 50rem) {
+  .projectCreationForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    min-width: 45rem;
+    align-self: center;
+  }
 }

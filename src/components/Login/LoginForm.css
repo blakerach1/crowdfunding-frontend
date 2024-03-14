@@ -42,3 +42,22 @@ button {
 button:hover {
   background-color: var(--color-light-accent-1);
 }
+
+@media (min-width: 50rem) {
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signupForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    min-width: 45rem;
+    align-self: center;
+  }
+}

@@ -1,9 +1,14 @@
+.pledgeForm {
+  display: flex;
+  flex-direction: column;
+}
+
 #amount {
-  border: 5px solid var(--color-light-accent-2);
+  border: 5px solid var(--color-light-shades);
   border-radius: 4px;
 }
 #comment {
-  border: 5px solid var(--color-light-accent-2);
+  border: 5px solid var(--color-light-shades);
   border-radius: 4px;
   margin-bottom: 25px;
   padding-bottom: 20em;
@@ -15,24 +20,23 @@
 }
 
 input[type="checkbox"] {
-  margin-right: 25px;
+  margin-left: 25px;
 }
 
 #pledgeAnonymously {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.pledgeButton {
+.pledgeButton[type="submit"] {
   background-color: var(--color-light-accent-2);
 }
 
-@media (min-width: 600px) {
-  #pledgeAnonymously {
-    justify-content: center;
-  }
+.pledgeButton:hover {
+  background-color: var(--color-light-shades);
+  color: var(--color-light-accent-2);
+  font-weight: var(--font-weight-heavy);
+}
 
-  #anonymous {
-    margin-left: 1em;
-  }
+@media (min-width: 50rem) {
 }

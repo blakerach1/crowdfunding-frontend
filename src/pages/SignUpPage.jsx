@@ -1,7 +1,13 @@
 import SignUpForm from "../components/Login/SignUpForm";
 
 function SignUpPage() {
-  return <SignUpForm />;
+  return (
+    <>
+      <section className="signupForm">
+        <SignUpForm />
+      </section>
+    </>
+  );
 }
 
 export default SignUpPage;

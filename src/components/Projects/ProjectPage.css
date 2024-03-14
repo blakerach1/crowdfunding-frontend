@@ -1,4 +1,6 @@
 .projectPage {
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-main);
   padding: 25px;
   width: 75%;
@@ -14,6 +16,8 @@
   padding: 5px;
   border: 1px solid var(--color-light-shades);
   background-color: var(--color-light-shades);
+  max-width: 50rem;
+  align-self: center;
 }
 
 .projectPanel img {
@@ -48,19 +52,23 @@
 }
 
 .projectPledgeList {
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-light-shades);
   padding: 25px;
   margin-bottom: 25px;
 }
 
 .projectPledgeList h3 {
+  text-align: center;
   margin-bottom: 25px;
 }
 
 .pledgeListing {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 1rem;
+  max-width: 40rem;
+  align-self: center;
 }
 
 .pledgeListing li:nth-child(odd) {
@@ -73,6 +81,7 @@
 .backgroundImage {
   background: url(../src/assets/river-pebbles.jpg);
   background-repeat: repeat;
+  border-radius: 5px;
 }
 
 .pledgeListing ul {
@@ -84,6 +93,8 @@
   padding: 15px;
   border: 1px solid var(--color-main);
   width: 80%;
+  min-width: 25rem;
+  margin-right: 2px;
 }
 
 .pledgeListing li p {
@@ -102,5 +113,5 @@
   font-size: var(--small-font-size);
 }
 
-@media (max-width: 400px) {
+@media (min-width: 50rem) {
 }

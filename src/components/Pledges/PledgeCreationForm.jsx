@@ -54,40 +54,42 @@ function PledgeCreationForm(props) {
   };
 
   return (
-    <form>
-      <div className="formDiv">
-        <label htmlFor="amount">Pledge Amount ($):</label>
-        <input
-          type="text"
-          id="amount"
-          value={pledge.amount}
-          placeholder="Enter Pledge Amount"
-          onChange={handleChange}
-        />
-      </div>
-      <div className="formDiv">
-        <label htmlFor="comment">Comment:</label>
-        <input
-          type="text"
-          id="comment"
-          value={pledge.comment}
-          placeholder="Enter Comment"
-          onChange={handleChange}
-        />
-      </div>
-      <div className="formDiv" id="pledgeAnonymously">
-        <label htmlFor="anonymous">Pledge Anonymously:</label>
-        <input
-          type="checkbox"
-          id="anonymous"
-          value={pledge.anonymous}
-          onChange={handleChange}
-        />
-      </div>
-      <button className="pledgeButton" type="submit" onClick={handleSubmit}>
-        Create Pledge
-      </button>
-    </form>
+    <section className="pledgeForm">
+      <form>
+        <div className="formDiv">
+          <label htmlFor="amount">Pledge Amount ($):</label>
+          <input
+            type="text"
+            id="amount"
+            value={pledge.amount}
+            placeholder="Enter Pledge Amount"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="formDiv">
+          <label htmlFor="comment">Comment:</label>
+          <input
+            type="text"
+            id="comment"
+            value={pledge.comment}
+            placeholder="Enter Comment"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="formDiv" id="pledgeAnonymously">
+          <label htmlFor="anonymous">Pledge Anonymously:</label>
+          <input
+            type="checkbox"
+            id="anonymous"
+            value={pledge.anonymous}
+            onChange={handleChange}
+          />
+        </div>
+        <button className="pledgeButton" type="submit" onClick={handleSubmit}>
+          Create Pledge
+        </button>
+      </form>
+    </section>
   );
 }
 
