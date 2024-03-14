@@ -79,7 +79,7 @@
 }
 
 .backgroundImage {
-  background: url(../src/assets/river-pebbles.jpg);
+  background: url(/river-pebbles.jpg);
   background-repeat: repeat;
   border-radius: 5px;
 }
