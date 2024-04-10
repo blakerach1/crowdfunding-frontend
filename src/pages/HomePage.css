@@ -10,11 +10,6 @@ body {
   padding: 1rem;
 }
 
-.project-cards-container {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-light-1);
-}
 
 @media (max-width: 400px) {
   #project-card-container {

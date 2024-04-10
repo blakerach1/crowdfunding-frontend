@@ -1,29 +1,27 @@
 @import '../../index.css';
 
 
+.project-card {
+  display: flex;
+  flex-direction: column;
 
-.project-image {
-  width: 80%;
-  object-fit: cover;
 }
 
-.project-card-header h4 {
-
-  padding: 0.5rem;
-
+.project-image img, .project-image-placeholder img {
+  object-fit: fill;
+  width: 100%;
 }
 
 .project-card-header a {
   text-decoration: none;
   color: var(--color-dark-shades);
-  padding: 1rem;
+  padding: 1.5rem;
   display: block;
   text-align: center;
   border-radius: var(--border-radius-container);
   transition: 0.3s;
-  height: 100%;
 }
 
-.project-card-container a:hover {
+.project-card-header a:hover {
   background-color: var(--color-light-2);
 }
