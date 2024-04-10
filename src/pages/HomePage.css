@@ -3,12 +3,18 @@ body {
   font-family: var(--main-font);
 }
 
-.featured-projects-section {
+.featured-projects-section h2 {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+.project-cards-container {
   display: flex;
   flex-direction: column;
   background-color: var(--color-light-1);
 }
-
 
 @media (max-width: 400px) {
   #project-card-container {

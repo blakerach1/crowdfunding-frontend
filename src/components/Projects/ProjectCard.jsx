@@ -8,35 +8,31 @@ function ProjectCard({ project }) {
   const projectLink = `project/${project.id}`;
   
   return (
-    <div className="project-card-container">
-      <div className="project--card-container">
-
-          <div className="project-image">
-            {project.image ? (
-              <div>
-              <img
-              src={project.image}
-              className="project-image"
-              alt="image of project"
-              />
-            </div>
-            ) : (
-              <div>
-                <img
-                src={projectPlaceHolder}
-                className="project-image-placeholder"
-                />
-              </div>
-            )}
+    <>
+      <div className="project-image">
+        {project.image ? (
+          <div>
+          <img
+          src={project.image}
+          className="project-image"
+          alt="image of project"
+          />
+        </div>
+        ) : (
+          <div>
+            <img
+            src={projectPlaceHolder}
+            className="project-image-placeholder"
+            />
           </div>
-          <div className="project-card-header">
-            <Link to={projectLink}>
-              <h4>{project.title}</h4>
-            </Link>
-          </div>
-
+        )}
       </div>
-    </div>
+      <div className="project-card-header">
+        <Link to={projectLink}>
+          <h4>{project.title}</h4>
+        </Link>
+      </div>
+    </>
   );
 }
 

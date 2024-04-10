@@ -53,21 +53,19 @@ function ProjectCards({ projects }) {
 
     return (
         <>
-            <div className="project--cards-container">
+            <div className="project-card-container">
                 {currentProjects.map((project, index) => (
                     <ProjectCard key={index} project={project} />
                 ))}
             </div>
             <div className="paginate-section">
-                <div className="paginate-numbers">
-                    <Paginate
-                    projectsPerPage={projectsPerPage}
-                    totalProjects={shuffledProjects.length}
-                    paginate={paginate}
-                    previousPage={previousPage}
-                    nextPage={nextPage}
-                    />
-                </div>
+                <Paginate
+                projectsPerPage={projectsPerPage}
+                totalProjects={shuffledProjects.length}
+                paginate={paginate}
+                previousPage={previousPage}
+                nextPage={nextPage}
+                />
             </div>
         </>
     );
