@@ -72,11 +72,6 @@ function ProjectPage() {
               );
             })}
           </ul>
-          <div
-            className="backgroundImage"
-            role="img"
-            aria-label="{background picture of river pepples}"
-          ></div>
         </div>
       </div>
       <PledgeCreationForm project={id} />
