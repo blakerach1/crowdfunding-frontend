@@ -20,7 +20,7 @@ nav li {
 nav li a {
   text-decoration: none;
   color: var(--color-dark-shades);
-  font-size: var(--a-font-size);
+  font-size: var(--link-font-size);
   font-weight: var(--font-weight-heavy);
 }
 

@@ -1,21 +1,21 @@
-.project-card {
+.project-card-container {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
 }
 
-.project-card img {
+.project-card-container img {
   width: 100%;
   object-fit: cover;
 }
 
-.project-card h5 {
+.project-card-container h5 {
   margin: 0;
   padding: 1rem;
   font-weight: var(--font-weight-heavy);
 }
 
-.project-card a {
+.project-card-container a {
   text-decoration: none;
   color: var(--color-dark-shades);
   padding: 1rem;
@@ -27,6 +27,6 @@
   height: 100%;
 }
 
-.project-card a:hover {
+.project-card-container a:hover {
   background-color: var(--color-light-accent-1);
 }

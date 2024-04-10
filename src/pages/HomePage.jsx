@@ -1,6 +1,6 @@
-import ProjectCard from "../components/Projects/ProjectCard"; // import the ProjectCard component
+import ProjectCards from "../components/Projects/ProjectCards"; // import the ProjectCard component
 import useProjects from "../hooks/use-projects";
-import "../components/Home/HomePage.css"; // import the HomePage.css file
+import "../pages/HomePage.css"; // import the HomePage.css file
 
 function HomePage() {
   const { projects, isLoading, error } = useProjects(); // use the useProjects hook to get the projects
@@ -14,10 +14,19 @@ function HomePage() {
   }
 
   return (
-    <div id="project-list">
-      {projects.map((projectData, key) => {
+    <div id="project-card-container">
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>
+          Sorry, there is an error in loading this information!
+        </p>
+      ): (
+        <ProjectCards projects={projects}/>
+      )}
+      {/* {projects.map((projectData, key) => {
         return <ProjectCard key={key} projectData={projectData} />;
-      })}
+      })} */}
     </div>
   );
 }

@@ -1,17 +1,43 @@
 import { Link } from "react-router-dom";
 import "./ProjectCard.css";
+import React, { useEffect, useState } from "react";
+import projectPlaceHolder from "../../assets/Project/project-placeholder.png";
 
-function ProjectCard(props) {
-  const { projectData } = props;
-  const projectLink = `project/${projectData.id}`;
+function ProjectCard({ project }) {
+  console.log("project inside project card:", project);
 
+  const projectLink = `project/${project.id}`;
+  
   return (
-    <div className="project-card">
-      <Link to={projectLink}>
-        <img src={projectData.image} alt="Project Title Image" />
-        <h5>{projectData.title}</h5>
-      </Link>
-    </div>
+    <section className="project-card-body-container">
+      <div className="project-card-container">
+
+          <div className="project-image">
+            {project.image ? (
+              <div>
+              <img
+              src={project.image}
+              className="project-image"
+              alt="image of project"
+              />
+            </div>
+            ) : (
+              <div>
+                <img
+                src={projectPlaceHolder}
+                className="project-image-placeholder"
+                />
+              </div>
+            )}
+          </div>
+          <div className="project-card-header">
+            <Link to={projectLink}>
+              <h5>{project.title}</h5>
+            </Link>
+          </div>
+
+      </div>
+    </section>
   );
 }
 
