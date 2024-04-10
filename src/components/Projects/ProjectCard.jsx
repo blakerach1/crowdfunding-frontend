@@ -4,13 +4,12 @@ import React, { useEffect, useState } from "react";
 import projectPlaceHolder from "../../assets/Project/project-placeholder.png";
 
 function ProjectCard({ project }) {
-  console.log("project inside project card:", project);
 
   const projectLink = `project/${project.id}`;
   
   return (
-    <section className="project-card-body-container">
-      <div className="project-card-container">
+    <div className="project-card-container">
+      <div className="project--card-container">
 
           <div className="project-image">
             {project.image ? (
@@ -32,12 +31,12 @@ function ProjectCard({ project }) {
           </div>
           <div className="project-card-header">
             <Link to={projectLink}>
-              <h5>{project.title}</h5>
+              <h4>{project.title}</h4>
             </Link>
           </div>
 
       </div>
-    </section>
+    </div>
   );
 }
 

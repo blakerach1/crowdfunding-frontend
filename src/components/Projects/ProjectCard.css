@@ -1,32 +1,29 @@
-.project-card-container {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-}
+@import '../../index.css';
 
-.project-card-container img {
-  width: 100%;
+
+
+.project-image {
+  width: 80%;
   object-fit: cover;
 }
 
-.project-card-container h5 {
+.project-card-header h4 {
   margin: 0;
-  padding: 1rem;
-  font-weight: var(--font-weight-heavy);
+  padding: 0.5rem;
+
 }
 
-.project-card-container a {
+.project-card-header a {
   text-decoration: none;
   color: var(--color-dark-shades);
   padding: 1rem;
   display: block;
   text-align: center;
-  background-color: var(--color-light-shades);
-  border-radius: 5px;
+  border-radius: var(--border-radius-container);
   transition: 0.3s;
   height: 100%;
 }
 
 .project-card-container a:hover {
-  background-color: var(--color-light-accent-1);
+  background-color: var(--color-light-2);
 }

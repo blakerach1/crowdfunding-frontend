@@ -10,6 +10,10 @@
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-style: normal;
+
+  --border-radius-container: 5px;
+  --border-radius-button: 15px;
+
   --color-main-background: #F3F3F3;
   --color-light-1: #F3F3F3;
   --color-light-2: #E7E7E7;
@@ -59,33 +63,30 @@ html {
 }
 
 h1 {
-  font-size: 2.388em;
+  font-size: 2.25em;
   color: var(--color-primary-dark-4);
 }
 
 h2 {
-  font-size: 1.9904em;
+  font-size: 1.625em;
   color: var(--color-primary-dark-4);
 }
 
 h3 {
-  font-size: 1.728em;
+  font-size: 1.25em;
   color: var(--color-primary-dark-4);
 }
 
 h4 {
-  font-size: 1.3824em;
+  font-size: var(--base-font-size);
   color: var(--color-primary-dark-4);
+  font-weight: var(--font-weight-heavy);
 }
 
-h5 {
-  font-size: 1.11em;
-  color: var(--color-primary-dark-4);
-}
-
-p {
-  font-size: 1em;
+p, li {
+  font-size: var(--small-font-size);
   color: var(--color-warm-dark-2);
+  font-weight: var(--font-weight-normal);
 }
 
 a {

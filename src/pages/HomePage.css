@@ -3,12 +3,12 @@ body {
   font-family: var(--main-font);
 }
 
-#project-card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 10px;
-  background-color: var(--color-main);
+.featured-projects-section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-light-1);
 }
+
 
 @media (max-width: 400px) {
   #project-card-container {

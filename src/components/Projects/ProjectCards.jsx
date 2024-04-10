@@ -53,7 +53,7 @@ function ProjectCards({ projects }) {
 
     return (
         <>
-            <div className="profile-cards-container">
+            <div className="project--cards-container">
                 {currentProjects.map((project, index) => (
                     <ProjectCard key={index} project={project} />
                 ))}

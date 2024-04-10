@@ -14,20 +14,20 @@ function HomePage() {
   }
 
   return (
-    <div id="project-card-container">
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p>
-          Sorry, there is an error in loading this information!
-        </p>
-      ): (
-        <ProjectCards projects={projects}/>
-      )}
-      {/* {projects.map((projectData, key) => {
-        return <ProjectCard key={key} projectData={projectData} />;
-      })} */}
-    </div>
+    <section className="featured-projects-section">
+      <h2>Featured Projects</h2>
+      <div className="project-cards-container">
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>
+            Sorry, there is an error in loading this information!
+          </p>
+        ): (
+          <ProjectCards projects={projects}/>
+        )}
+      </div>
+    </section>
   );
 }
 
