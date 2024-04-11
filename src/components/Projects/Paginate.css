@@ -6,12 +6,14 @@
 }
 
 .pagination-list {
+  background-color: var(--color-light-1);
   display: flex;
   justify-content: center;
   gap: 10px;
   list-style-type: none;
+  padding: 0 0 35px 0;
   padding-inline-start: 0px;
-
+  border-radius: 0 0 10px 10px;
 }
  
 .pagination-list-item {
