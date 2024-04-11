@@ -18,13 +18,13 @@ function HomePage() {
     <>
       <section className="home-page-content">
         <HeroBanner />
-        <div className="supporting-info">
-          <p className="first-p">In today's world, investors seek more than just financial gains. 
-            They crave a sense of purpose and connection.</p> 
-          <p className="second-p">At CrowdHarbour, we understand this desire and 
-            strive to facilitate investments that enrich both 
-            the investor and the world around them.</p>
-        </div>
+          <div className="supporting-info">
+            <p className="first-p">In today's world, investors seek more than just financial gains. 
+              They crave a sense of purpose and connection.</p> 
+            <p className="second-p">At CrowdHarbour, we understand this desire and 
+              strive to facilitate investments that enrich both 
+              the investor and the world around them.</p>
+          </div>
       </section>
       <section className="featured-projects-section">
         <h2>Featured Projects</h2>

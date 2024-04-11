@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./HeroBanner.css";
-import heroBannerImage from "../../../public/water-drop.jpg";
+import heroBannerImage from "/water-drop.jpg";
 
 function HeroBanner() {
     return (
