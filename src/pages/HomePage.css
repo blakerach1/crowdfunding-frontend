@@ -18,10 +18,11 @@ body {
   background-color: var(--color-light-1);
   width: 60%;
   min-height: 350px;
-  min-width: 235px;
+  min-width: 205px;
   padding: 25px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 25px;
   border-radius: var(--border-radius-container);
 
 }

@@ -1,0 +1,18 @@
+.hero-banner-text {
+    background-color: pink;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    align-items: flex-start;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: var(--border-radius-container);
+    padding: 25px;
+}
+
+.hero-banner-text p {
+    margin: 5px 0px;
+}

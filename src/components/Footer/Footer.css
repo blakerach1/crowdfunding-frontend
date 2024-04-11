@@ -4,9 +4,7 @@
 }
 
 .footer-container {
-    height: 95vh;
     display: flex;
-    min-width: 400px;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-end;
@@ -20,11 +18,16 @@ h2 span {
     color: var(--color-primary-light-4)
 }
 
+.footer-container h2 {
+    margin-top: 100px;
+}
+
 .footer-container h2,
 .footer-container h4,
 .footer-container a,  
 .footer-container p {
     color:  var(--color-light-3);
+    overflow:scroll;
 }
 
 .legals-list, .footer-container a {
