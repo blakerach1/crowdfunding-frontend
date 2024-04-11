@@ -1,20 +1,21 @@
 /* on projectcards.jsx */
 
 .paginate-section {
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  margin-top: 20px;
+
+}
 
 .pagination-list {
-    list-style-type: none;
-    display: flex;
-    gap: 0.5rem;
-    margin: auto;
-  }
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  list-style-type: none;
+  padding-inline-start: 0px;
+
+}
  
 .pagination-list-item {
-    cursor: pointer;
+  cursor: pointer;
     background-color: var(--color-primary-dark-1);
     color: var(--color-light-1);
     padding: 0.3rem 0.5rem;

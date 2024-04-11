@@ -46,22 +46,35 @@
   --color-link-underline: underline;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+* {
+  margin: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
   background-color: var(--color-main-background);
-  font-size: var(--base-font-size);
+  -webkit-font-smoothing: antialised;
+}
+
+img, picture, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4 {
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -93,6 +106,8 @@ p, li {
 
 a {
   font-size: 1em;
+  text-decoration: none;
+  color: inherit;
 }
 
 .boldText {
