@@ -1,117 +1,117 @@
 .projectPage {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-main);
-  padding: 25px;
-  width: 75%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-main-background);
   margin: auto;
-  text-align: center;
 }
 
-.projectPanel {
+.project-img-container img {
+  width: 800px;
+  height: 430px;
+  object-fit: cover;
+}
+
+.project-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 25px 0px;
-  padding: 5px;
-  border: 1px solid var(--color-light-shades);
-  background-color: var(--color-light-shades);
+  justify-content: space-around;
+  gap: 15px;
+  margin: 25px 10px;
   max-width: 50rem;
-  align-self: center;
+  align-items: center;
 }
 
-.projectPanel img {
-  width: 80%;
-  align-self: center;
-  margin: 25px 0px;
+.project-summary {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 5px;
 }
 
-.projectPanel p {
-  width: 80%;
-  align-self: center;
-  text-align: center;
-  line-height: 2;
-  margin: 25px 0px;
+.projectPage h3 {
+  margin-top: 25px;
+}
+
+.project-summary p {
+  line-height: 1.5;
+  margin: 15px 25px;
+  flex: 2;
 }
 
 .fundingProgress {
+  background-color: var(--color-light-2);
+  border-radius: var(--border-radius-container);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 25px 0px;
+  align-items: center;
+  margin: 15px 0px;
+  margin-right: 15px;
+  flex: 1;
 }
 
-.fundingProgress p {
-  text-align: center;
-  margin-top: 5px;
+.fundingProgress p  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  margin: 0px;
+  font-size: var(--extra-small-font-size);
 }
 
-.projectStats {
+.supporting-text-section {
+  background-color: var(--color-light-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 60px;
+  margin-bottom: -30px;
+}
+
+.supporting-text-section div {
+  background-color: var(--color-light-1);
+  width: 60%;
+  padding: 25px;
+  margin: auto;
   margin-top: 25px;
-  font-size: var(--small-font-size);
+  margin-bottom: 25px;
+  border-radius: var(--border-radius-container);
+
+}
+
+.supporting-text-section a {
+  cursor: pointer;
+  background-color: var(--color-dark-2);
+  color: var(--color-light-1);
+  padding: 0.4rem 0.6rem;
+  border: var(--border-button);
+  border-radius: var(--border-radius-button);
+  margin: auto;
 }
 
 .projectPledgeList {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-light-shades);
-  padding: 25px;
-  margin-bottom: 25px;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--color-light-1);
+  border-radius: var(--border-radius-container);
 }
 
 .projectPledgeList h3 {
-  text-align: center;
-  margin-bottom: 25px;
+  align-self: flex-start;
+  margin: 25px;
+
 }
 
-.pledgeListing {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  max-width: 40rem;
-  align-self: center;
-}
-
-.pledgeListing li:nth-child(odd) {
-  background-color: var(--color-light-accent-2);
-}
-.pledgeListing li:nth-child(even) {
-  background-color: var(--color-light-shades);
-}
-
-.backgroundImage {
-  background: url(/river-pebbles.jpg);
-  background-repeat: repeat;
-  border-radius: 5px;
-}
-
-.pledgeListing ul {
-  list-style: none;
-}
-
-.pledgeListing li {
-  text-align: start;
-  padding: 15px;
-  border: 1px solid var(--color-main);
-  width: 80%;
-  min-width: 25rem;
-  margin-right: 2px;
-}
-
-.pledgeListing li p {
-  margin: 15px 0px;
-}
-
-.pledgeDetails {
-  border: 1px solid var(--color-main);
-}
-
-.pledgeListing li a {
-  text-decoration: none;
-}
-
-.pledgedAgo {
-  font-size: var(--small-font-size);
-}
-
-@media (min-width: 50rem) {
+.pledge-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }

@@ -1,0 +1,28 @@
+.pledge-card {
+    background-color: var(--color-light-4);
+    padding: 25px;
+    border: var(--border-container);
+    border-radius: var(--border-radius-container);
+}
+
+.pledge-card p {
+    margin: 0px;
+    line-height: 2;
+    text-align: center;
+}
+
+.pledge-card ul {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+  
+.pledge-card li {
+text-align: start;
+}
+
+
+.pledgedAgo {
+font-size: var(--small-font-size);
+}
+
+  

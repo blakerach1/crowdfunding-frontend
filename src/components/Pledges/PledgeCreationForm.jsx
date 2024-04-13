@@ -16,7 +16,6 @@ function PledgeCreationForm(props) {
     supporter: auth.user_id, // need to figure out how to get the user id from the token
   });
 
-  console.log("initial pledge values", pledge);
 
   const handleChange = (event) => {
     const { id, type } = event.target;
@@ -39,7 +38,6 @@ function PledgeCreationForm(props) {
         pledge.project,
         pledge.supporter
       ).then((response) => {
-        console.log(response);
         // clear form fields
         setPledges({
           amount: "",
