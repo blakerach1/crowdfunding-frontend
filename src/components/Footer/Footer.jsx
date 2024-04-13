@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import FacebookIcon from "../Icons/FacebookIcon"
-import InstagramIcon from "../Icons/InstagramIcon"
-import LinkedinIcon from "../Icons/LinkedinIcon"
+import FacebookIcon from "../Icons/FacebookIcon";
+import InstagramIcon from "../Icons/InstagramIcon";
+import LinkedinIcon from "../Icons/LinkedinIcon";
 
 function Footer() {
     return (

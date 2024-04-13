@@ -27,7 +27,6 @@ h2 span {
 .footer-container a,  
 .footer-container p {
     color:  var(--color-light-3);
-    overflow:scroll;
 }
 
 .legals-list, .footer-container a {
