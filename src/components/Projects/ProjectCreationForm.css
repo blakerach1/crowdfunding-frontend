@@ -2,21 +2,18 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
-  padding: 50px;
+  padding: 25px;
   margin: 1em;
-  border: 3px solid var(--color-light-shades);
-  border-radius: 4px;
 }
 
 select {
   font-family: inherit;
   font-weight: 400;
-  color: var(--color-main);
+  color: var(--color-dark-2);
 }
 
 select option {
-  color: var(--color-main);
+  color: var(--color-dark-2);
   cursor: pointer;
   margin: 4px 0px;
 }
@@ -28,15 +25,8 @@ select {
   width: 95%;
   padding: 10px;
   margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
-button:hover {
-  background-color: var(--color-light-shades);
-  color: var(--color-light-accent-2);
-  font-weight: var(--font-weight-heavy);
-}
 
 @media (min-width: 50rem) {
   .projectCreationForm {

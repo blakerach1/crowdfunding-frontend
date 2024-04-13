@@ -5,8 +5,6 @@ form {
   justify-content: space-around;
   padding: 50px;
   margin: 1em;
-  border: 3px solid var(--color-light-3);
-  border-radius: 4px;
 }
 
 .formDiv {

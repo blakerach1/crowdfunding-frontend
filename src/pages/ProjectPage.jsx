@@ -10,6 +10,7 @@ import SupporterName from "../components/Pledges/Supporter";
 import PledgeCreationForm from "../components/Pledges/PledgeCreationForm";
 import "../components/Projects/ProjectPage.css";
 import PledgeCard from "../components/Pledges/PledgeCard";
+import rockPileImage from "/do-something-great.jpg";
 
 function ProjectPage() {
   // Here we use a hook that comes for free in react router called 'useParams' to get the id from the URL so that we can pass it to our useProject hook.
@@ -23,6 +24,13 @@ function ProjectPage() {
 
   if (error) {
     return <p>{error.message}</p>;
+  }
+
+  function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth'});
+    }
   }
 
   return (
@@ -74,7 +82,7 @@ function ProjectPage() {
               one pledge at a time.
               </p>
             </div>
-            <Link to="">Make a Pledge</Link>
+            <a href="#pledge-view" onClick={() =>scrollToSection('pledge-view')}>Make a Pledge</a>
         </div>
 
         <section className="projectPledgeList">
@@ -85,6 +93,11 @@ function ProjectPage() {
             ))}
           </div>
         </section>
+        <img className="rock-image"
+        id="pledge-view"
+        src={rockPileImage}
+        alt="picture of stacked rocks"
+        />
         <PledgeCreationForm project={id} />
       </section>
     </div>

@@ -128,3 +128,7 @@ button[type="submit"] {
   width: 10em;
   align-self: center;
 }
+
+button[type="submit"] :hover {
+  background-color: var(--color-light-3);
+}

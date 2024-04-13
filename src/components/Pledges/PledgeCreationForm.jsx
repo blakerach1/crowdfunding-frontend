@@ -4,6 +4,7 @@ import postPledge from "../../api/post-pledge";
 import useAuth from "../../hooks/use-auth";
 import "./PledgeCreationForm.css";
 
+
 function PledgeCreationForm(props) {
   const { id: projectId } = useParams();
 
@@ -53,9 +54,12 @@ function PledgeCreationForm(props) {
 
   return (
     <section className="pledgeForm">
+      <h3>Make your Pledge</h3>
+      <p>Join many others to support a worthy cause</p>
+
       <form>
         <div className="formDiv">
-          <label htmlFor="amount">Pledge Amount ($):</label>
+          <label htmlFor="amount">Amount ($):</label>
           <input
             type="text"
             id="amount"
@@ -65,7 +69,7 @@ function PledgeCreationForm(props) {
           />
         </div>
         <div className="formDiv">
-          <label htmlFor="comment">Comment:</label>
+          <label htmlFor="comment">Words of Support <span>(optional)</span></label>
           <input
             type="text"
             id="comment"
