@@ -32,18 +32,6 @@ select {
   border-radius: 4px;
 }
 
-button[type="submit"] {
-  margin-top: 25px;
-  padding: 10px 20px;
-  background-color: var(--color-light-accent-2);
-  color: var(--color-light-shades);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 10em;
-  align-self: center;
-}
-
 button:hover {
   background-color: var(--color-light-shades);
   color: var(--color-light-accent-2);

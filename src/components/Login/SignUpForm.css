@@ -1,0 +1,10 @@
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    border: none;
+  }
+
+label span {
+    font-size: var(--extra-small-font-size);
+}
+
