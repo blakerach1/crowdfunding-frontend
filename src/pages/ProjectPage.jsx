@@ -11,6 +11,7 @@ import PledgeCreationForm from "../components/Pledges/PledgeCreationForm";
 import "../components/Projects/ProjectPage.css";
 import PledgeCard from "../components/Pledges/PledgeCard";
 import rockPileImage from "/do-something-great.jpg";
+import projectPlaceHolder from "../assets/Project/placeholder-image.jpg";
 
 function ProjectPage() {
   // Here we use a hook that comes for free in react router called 'useParams' to get the id from the URL so that we can pass it to our useProject hook.
@@ -30,9 +31,18 @@ function ProjectPage() {
   return (
     <div>
       <section className="projectPage">
+      {project.image ? ( 
         <div className="project-img-container">
           <img src={project.image} alt={project.title} />
         </div>
+      ) : (
+        <div className="project-img-container">
+            <img
+            src={projectPlaceHolder}
+            alt="image of project"
+            />
+          </div>
+      )}
         <div className="project-info">
           <h3>{project.title}</h3>
           <div className="project-summary">
