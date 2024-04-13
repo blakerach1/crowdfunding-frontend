@@ -15,15 +15,15 @@ function Footer() {
                       from individuals who wish to contribute to 
                       meaningful causes. Our goal is to connect passionate
                        backers with impactful initiatives, fostering 
-                       positive change within communities
+                       positive change within communities.
                 </p>
-                <h4>Legals</h4>
+                <p className="footer-titles">Legals</p>
                 <ul className="legals-list">
                     <li><a href="/">Terms of Use</a></li>
                     <li><a href="/">Privacy Policy</a></li>
                     <li><a href="/">Legal Disclaimer</a></li>
                 </ul>
-                <h4>Contact</h4>
+                <p className="footer-titles">Contact</p>
                 <a href="/" className="contact-link">contact@crowdharbour.com.au</a>
                 <div className="icons-container">
                     <div><FacebookIcon /></div>

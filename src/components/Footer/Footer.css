@@ -22,15 +22,18 @@ h2 span {
     margin-top: 100px;
 }
 
+.footer-titles {
+    font-size: 16px;
+}
+
 .footer-container h2,
-.footer-container h4,
 .footer-container a,  
 .footer-container p {
     color:  var(--color-light-3);
 }
 
 .legals-list, .footer-container a {
-    padding-inline-start: 5px;
+    padding-inline-start: 0px;
 }
 
 .legals-list li {
@@ -55,4 +58,21 @@ h2 span {
 
 .disclaimer, .crowdharbour-info {
     font-size: var(--extra-small-font-size);
+}
+
+@media (min-width: 768px) {
+    .disclaimer, .crowdharbour-info {
+        font-size: var(--small-font-size)
+    }
+
+    .footer-container a {
+        font-size: var(--base-font-size);
+    }
+
+    .footer-titles {
+        font-size: 20px;
+        font-weight: var(--font-weight-heavy);
+        
+    }
+    
 }

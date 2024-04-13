@@ -26,7 +26,7 @@ function ProjectCard({ project }) {
         )}
         <div className="project-card-header">
           <Link to={projectLink}>
-            <h4>{project.title}</h4>
+            <p className="project-title">{project.title}</p>
           </Link>
         </div>
     </div>

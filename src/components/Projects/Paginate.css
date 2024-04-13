@@ -18,11 +18,11 @@
  
 .pagination-list-item {
   cursor: pointer;
-    background-color: var(--color-primary-dark-1);
-    color: var(--color-light-1);
-    padding: 0.3rem 0.5rem;
-    border: var(--border-button);
-    border-radius: var(--border-radius-button);
+  background-color: var(--color-dark-2);
+  color: var(--color-light-1);
+  padding: 0.4rem 0.6rem;
+  border: var(--border-button);
+  border-radius: var(--border-radius-button);
 }
 
 .pagination-list-item:hover {
