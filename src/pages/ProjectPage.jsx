@@ -26,12 +26,6 @@ function ProjectPage() {
     return <p>{error.message}</p>;
   }
 
-  function scrollToSection(id) {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({behavior: 'smooth'});
-    }
-  }
 
   return (
     <div>
@@ -82,7 +76,7 @@ function ProjectPage() {
               one pledge at a time.
               </p>
             </div>
-            <a href="#pledge-view" onClick={() =>scrollToSection('pledge-view')}>Make a Pledge</a>
+            <a href="">Make a Pledge</a>
         </div>
 
         <section className="projectPledgeList">
@@ -94,7 +88,6 @@ function ProjectPage() {
           </div>
         </section>
         <img className="rock-image"
-        id="pledge-view"
         src={rockPileImage}
         alt="picture of stacked rocks"
         />
