@@ -1,5 +1,5 @@
 import SignUpForm from "../components/Login/SignUpForm";
-import signupImage from "../../public/force-for-change.jpg";
+import signupImage from "/force-for-change.jpg";
 import { Link } from "react-router-dom";
 import "./SignUpPage.css";
 

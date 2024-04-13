@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import postSignUp from "../../api/post-signup";
+import { Link } from "react-router-dom";
 import "./SignUpForm.css";
 
 function SignUpForm() {
@@ -94,6 +95,7 @@ function SignUpForm() {
         />
       </div>
       <button className="signup-button" type="submit">Join</button>
+      <p>By joining, you agree to the <Link to="/">Terms</Link> and <Link to="/">Privacy Policy</Link></p>
     </form>
   );
 }
