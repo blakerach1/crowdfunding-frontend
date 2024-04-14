@@ -27,14 +27,15 @@ function LoginForm() {
       postLogin(credentials.username, credentials.password).then((response) => {
         window.localStorage.setItem("token", response.token);
         window.localStorage.setItem("user_id", response.user_id);
-        setAuth({ token: response.token, user_id: response.user_id });
+        window.localStorage.setItem("is_staff", response.is_staff);
+        setAuth({ token: response.token, user_id: response.user_id, is_staff: response.is_staff });
         navigate("/");
       });
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={handleSubmit}>
       <div className="formDiv">
         <label htmlFor="username">Username:</label>
         <input

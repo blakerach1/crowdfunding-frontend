@@ -1,0 +1,54 @@
+.hero-banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--color-light-1);  
+}
+
+.hero-banner-text {
+    background-color: var(--color-light-1);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    align-items: flex-start;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: var(--border-radius-container);
+    padding: 25px;
+}
+
+.hero-banner-text p {
+    margin: 5px 0px;
+}
+
+
+.hero-banner-container a {
+    cursor: pointer;
+    background-color: var(--color-dark-2);
+    color: var(--color-light-1);
+    padding: 0.4rem 0.6rem;
+    border: var(--border-button);
+    border-radius: var(--border-radius-button);
+    margin-bottom: 25px;  
+}
+
+@media (min-width: 640px) {
+    .supporting-info {
+        width: 400px;
+        min-height: 300px;
+    }
+}   
+
+@media (min-width: 1150px) {
+.hero-banner-image {
+    max-width: 100%;
+    object-fit: cover;
+    height: 860px;
+    width: 1900px;
+}
+
+}

@@ -6,6 +6,7 @@ export const AuthProvider = (props) => {
   const [auth, setAuth] = useState({
     token: window.localStorage.getItem("token"),
     user_id: window.localStorage.getItem("user_id"),
+    is_staff: window.localStorage.getItem("is_staff"),
   });
 
   return (
@@ -14,3 +15,4 @@ export const AuthProvider = (props) => {
     </AuthContext.Provider>
   );
 };
+

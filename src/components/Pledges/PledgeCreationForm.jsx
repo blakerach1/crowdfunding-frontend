@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import postPledge from "../../api/post-pledge";
 import useAuth from "../../hooks/use-auth";
 import "./PledgeCreationForm.css";
 
+
 function PledgeCreationForm(props) {
   const { id: projectId } = useParams();
+  const navigate = useNavigate();
 
   const { auth } = useAuth();
   const [pledge, setPledges] = useState({
@@ -13,10 +15,9 @@ function PledgeCreationForm(props) {
     comment: "",
     anonymous: false,
     project: projectId,
-    supporter: auth.user_id, // need to figure out how to get the user id from the token
+    supporter: auth.user_id, 
   });
 
-  console.log("initial pledge values", pledge);
 
   const handleChange = (event) => {
     const { id, type } = event.target;
@@ -31,7 +32,7 @@ function PledgeCreationForm(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (pledge.amount && pledge.comment) {
+    if (pledge.amount) {
       postPledge(
         pledge.amount,
         pledge.comment,
@@ -39,7 +40,6 @@ function PledgeCreationForm(props) {
         pledge.project,
         pledge.supporter
       ).then((response) => {
-        console.log(response);
         // clear form fields
         setPledges({
           amount: "",
@@ -47,17 +47,24 @@ function PledgeCreationForm(props) {
           anonymous: false,
           project: props.project,
           supporter: auth.user_id,
-        });
+        }); 
         location.reload();
-      });
+      }).catch((error) => {
+        window.alert(error.message);
+        navigate("/login");
+        });
     }
   };
 
+
   return (
     <section className="pledgeForm">
+      <h3>Make your Pledge</h3>
+      <p>Join many others to support a worthy cause</p>
+
       <form>
         <div className="formDiv">
-          <label htmlFor="amount">Pledge Amount ($):</label>
+          <label htmlFor="amount">Amount ($):</label>
           <input
             type="text"
             id="amount"
@@ -67,7 +74,7 @@ function PledgeCreationForm(props) {
           />
         </div>
         <div className="formDiv">
-          <label htmlFor="comment">Comment:</label>
+          <label htmlFor="comment">Words of Support <span>(optional)</span></label>
           <input
             type="text"
             id="comment"

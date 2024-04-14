@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import postSignUp from "../../api/post-signup";
+import { Link } from "react-router-dom";
+import "./SignUpForm.css";
 
 function SignUpForm() {
   const navigate = useNavigate();
@@ -44,9 +46,9 @@ function SignUpForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="signupForm" onSubmit={handleSubmit}>
       <div className="formDiv">
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="username">Username</label>
         <input
           type="text"
           id="username"
@@ -56,7 +58,7 @@ function SignUpForm() {
         />
       </div>
       <div className="formDiv">
-        <label htmlFor="first_name">First Name:</label>
+        <label htmlFor="first_name">First Name</label>
         <input
           type="text"
           id="first_name"
@@ -65,7 +67,7 @@ function SignUpForm() {
         />
       </div>
       <div className="formDiv">
-        <label htmlFor="last_name">Last Name:</label>
+        <label htmlFor="last_name">Last Name</label>
         <input
           type="text"
           id="last_name"
@@ -74,7 +76,7 @@ function SignUpForm() {
         />
       </div>
       <div className="formDiv">
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
           id="email"
@@ -84,7 +86,7 @@ function SignUpForm() {
         />
       </div>
       <div className="formDiv">
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password">Password <span>(min. 8 characters)</span></label>
         <input
           type="password"
           id="password"
@@ -92,7 +94,8 @@ function SignUpForm() {
           onChange={handleChange}
         />
       </div>
-      <button type="submit">Sign Up</button>
+      <button className="signup-button" type="submit">Join</button>
+      <p>By joining, you agree to the <Link to="/">Terms</Link> and <Link to="/">Privacy Policy</Link></p>
     </form>
   );
 }

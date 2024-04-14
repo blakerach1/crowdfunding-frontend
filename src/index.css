@@ -1,0 +1,125 @@
+:root {
+  --main-font: "Inter", sans-serif;
+  --base-font-size: 16px;
+  --link-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --extra-small-font-size: 0.75rem;
+  --box-shadow: 0 2px 4px #0000001a;
+  --line-height: 1.5;
+  --font-weight-extra-heavy: 600;
+  --font-weight-heavy: 500;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-style: normal;
+
+  --border-container: 1px solid var(--color-light-2);
+  --border-button: 1px solid var(--color-light-4);
+  --border-radius-container: 10px;
+  --border-radius-button: 10px;
+
+  --color-main-background: #F3F3F3;
+  --color-light-1: #F3F3F3;
+  --color-light-2: #E7E7E7;
+  --color-light-3: #DCDCDC;
+  --color-light-4: #D0D0D0;
+  --color-dark-1: #898989;
+  --color-dark-2: #5B5B5B;
+  --color-dark-3: #141414;
+  --color-warm-dark-1: #4F4C45;
+  --color-warm-dark-2: #404035;
+  --color-warm-dark-3: #27271D;
+  --color-primary-light-1: #D9FFF1;
+  --color-primary-light-2: #BEF5EB;
+  --color-primary-light-3: #8AF2E1;
+  --color-primary-light-4: #5DE3CA;
+  --color-primary-dark-1: #94BFC5;
+  --color-primary-dark-2: #6E99A1;
+  --color-primary-dark-3: #517F85;
+  --color-primary-dark-4: #39686C;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  background-color: var(--color-main-background);
+  -webkit-font-smoothing: antialised;
+}
+
+img, picture, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4 {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: 2.25em;
+  color: var(--color-primary-dark-4);
+  margin: 10px 0px;
+}
+
+h2 {
+  font-size: 1.625em;
+  color: var(--color-primary-dark-4);
+  margin: 10px 0px;
+}
+
+h3 {
+  font-size: 1.25em;
+  color: var(--color-primary-dark-4);
+}
+
+h4 {
+  font-size: var(--base-font-size);
+  color: var(--color-primary-dark-4);
+  font-weight: var(--font-weight-heavy);
+}
+
+p, li {
+  font-size: var(--small-font-size);
+  color: var(--color-warm-dark-2);
+  font-weight: var(--font-weight-normal);
+}
+
+a {
+  font-size: 1em;
+  text-decoration: none;
+  color: inherit;
+}
+
+.boldText {
+  font-weight: 600;
+}
+
+button[type="submit"] {
+  margin-top: 25px;
+  background-color: var(--color-dark-2);
+  color: var(--color-light-1);
+  padding: 0.4rem 0.6rem;
+  border: var(--border-button);
+  border-radius: var(--border-radius-button);
+  cursor: pointer;
+  width: 10em;
+  align-self: center;
+}
+
+button[type="submit"] :hover {
+  background-color: var(--color-light-3);
+}

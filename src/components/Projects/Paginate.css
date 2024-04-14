@@ -1,0 +1,37 @@
+/* on projectcards.jsx */
+
+.paginate-section {
+  margin-top: 20px;
+
+}
+
+.pagination-list {
+  background-color: var(--color-light-1);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  list-style-type: none;
+  padding: 0 0 35px 0;
+  padding-inline-start: 0px;
+  border-radius: 0 0 10px 10px;
+}
+ 
+.pagination-list-item {
+  cursor: pointer;
+  background-color: var(--color-dark-2);
+  color: var(--color-light-1);
+  padding: 0.4rem 0.6rem;
+  border: var(--border-button);
+  border-radius: var(--border-radius-button);
+}
+
+.pagination-list-item:hover {
+background-color: var(--color-primary-dark-2);
+}
+
+.pagination-list-item.active {
+background-color: var(--color-primary-light-4);
+}
+
+
+

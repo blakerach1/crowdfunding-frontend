@@ -56,7 +56,7 @@ function ProjectCreationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="project-creation-form" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="title">Project Name:</label>
         <input

@@ -1,21 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
+import NavBar from "./components/Nav/NavBar";
+import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import ProjectCreationPage from "./pages/ProjectCreationPage";
 import PledgePage from "./pages/PledgePage";
-
-import App from "./app";
 import { AuthProvider } from "./components/AuthProvider";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <div className="wrapper">
+        <NavBar/>
+        <div className="content">
+          <Outlet/>
+        </div>
+        <Footer/>
+      </div>
+    ),
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/login", element: <LoginPage /> },
