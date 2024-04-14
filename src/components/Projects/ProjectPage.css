@@ -26,6 +26,7 @@
 .project-summary {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 25px;
   margin: 5px;
 }
@@ -37,7 +38,7 @@
 
 .project-summary p {
   line-height: 1.5;
-  margin: 15px 25px;
+  margin: 15px 5px;
   flex: 2;
 }
 
@@ -58,9 +59,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  line-height: 1;
+  line-height: 1.5;
   margin: 0px;
   font-size: var(--extra-small-font-size);
+  text-align: center;
 }
 
 .supporting-text-section {
@@ -106,7 +108,7 @@
 }
 
 .projectPledgeList h3 {
-  align-self: flex-start;
+  align-self: center;
   margin: 25px;
 
 }
@@ -119,4 +121,65 @@
 
 .rock-image {
   margin-top: 25px;
+}
+
+@media (min-width: 640px) {
+  .fundingProgress {
+    padding: 15px;
+  }
+
+  .fundingProgress p  {
+    line-height: 2;
+  }
+  .rock-image {
+    max-width: 100%;
+    object-fit: cover;
+    height: 860px;
+    width: 320px;
+  }
+
+  .make-pledge-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pledge-image-container {
+    flex:1;
+  }
+
+  .pledgeForm {
+    flex:2;
+  }
+
+  .supporting-text-section {
+    width: 100%;
+  }
+
+  .supporting-text-section div {
+    max-width: 380px;
+  }
+
+
+
+}
+@media (min-width: 799px) {
+  .rock-image {
+    max-width: 100%;
+    object-fit: cover;
+    height: 860px;
+    min-width: 450px;
+  }
+
+  .pledgeForm form {
+    min-width: 320px;
+  }
+
+  .pledge-image-container {
+    flex:1;
+  }
+
+  .pledgeForm {
+    flex:2;
+  }
 }

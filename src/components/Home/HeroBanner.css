@@ -35,3 +35,20 @@
     border-radius: var(--border-radius-button);
     margin-bottom: 25px;  
 }
+
+@media (min-width: 640px) {
+    .supporting-info {
+        width: 400px;
+        min-height: 300px;
+    }
+}   
+
+@media (min-width: 1150px) {
+.hero-banner-image {
+    max-width: 100%;
+    object-fit: cover;
+    height: 860px;
+    width: 1900px;
+}
+
+}
