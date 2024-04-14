@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import postPledge from "../../api/post-pledge";
 import useAuth from "../../hooks/use-auth";
 import "./PledgeCreationForm.css";
@@ -7,6 +7,7 @@ import "./PledgeCreationForm.css";
 
 function PledgeCreationForm(props) {
   const { id: projectId } = useParams();
+  const navigate = useNavigate();
 
   const { auth } = useAuth();
   const [pledge, setPledges] = useState({
@@ -14,7 +15,7 @@ function PledgeCreationForm(props) {
     comment: "",
     anonymous: false,
     project: projectId,
-    supporter: auth.user_id, // need to figure out how to get the user id from the token
+    supporter: auth.user_id, 
   });
 
 
@@ -31,7 +32,7 @@ function PledgeCreationForm(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (pledge.amount && pledge.comment) {
+    if (pledge.amount) {
       postPledge(
         pledge.amount,
         pledge.comment,
@@ -46,11 +47,15 @@ function PledgeCreationForm(props) {
           anonymous: false,
           project: props.project,
           supporter: auth.user_id,
-        });
+        }); 
         location.reload();
-      });
+      }).catch((error) => {
+        window.alert(error.message);
+        navigate("/login");
+        });
     }
   };
+
 
   return (
     <section className="pledgeForm">

@@ -135,13 +135,17 @@
     max-width: 100%;
     object-fit: cover;
     height: 860px;
-    width: 320px;
+    min-width: 400px;
   }
 
   .make-pledge-section {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .pledgeForm form {
+    min-width: 320px;
   }
 
   .pledge-image-container {

@@ -1,5 +1,5 @@
 /* Generic form styling */
-form {
+login-form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -45,19 +45,23 @@ button:hover {
   background-color: var(--color-light-2);
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 640px) {
+  .login-form {
+    min-height: 60vh;
+    justify-content: center;
+    gap: 5px
+}
+}
+
+@media (min-width: 800px) {
   .loginForm {
     display: flex;
     flex-direction: column;
   }
 
-  form {
+  .login-form {
     min-width: 45rem;
     align-self: center;
   }
 
-  .signupForm {
-    min-width: 25rem;
-    align-self: center;
-  }
 }

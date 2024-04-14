@@ -25,6 +25,9 @@ async function postPledge(amount, comment, anonymous, project, supporter) {
     });
 
     const errorMessage = data?.detail ?? fallbackError;
+    if (errorMessage === "Invalid token.") {
+      throw new Error('You must be logged in to create a pledge');
+    }
     throw new Error(errorMessage);
   }
   return await response.json();

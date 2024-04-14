@@ -27,7 +27,7 @@ input[type="checkbox"] {
 }
 
 input::placeholder {
-  font-size: var(--extra-small-font-size);
+  font-size: var(--small-font-size);
 }
 
 #pledgeAnonymously {

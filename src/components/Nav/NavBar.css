@@ -55,6 +55,7 @@
 .nav-Links a:hover {
   background-color: var(--color-light-2);
   color: var(--color-warm-dark-3);
+  border-radius: var(--border-radius-button);
 }
 
 

@@ -8,10 +8,12 @@
 
 .login-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 10px;
     align-items: center;
 }
+
 
 .login-container a {
     color: var(--color-primary-light-4);
@@ -39,11 +41,38 @@
 
 }
 
+@media (min-width: 800px) {
+    .signupForm {
+        min-width: 25rem;
+        align-self: center;
+    }
+}
+
 @media (min-width: 1150px) {
     .signup-image {
         max-width: 100%;
         object-fit: cover;
-        height: auto;
-        width: auto;
+        object-position: center bottom;
+        height: 850px;
+        width: 1250px;
+    }
+
+
+}
+
+@media (min-width: 1150px) {
+    .signup-page-contents {
+        justify-content: flex-start;
+        gap: 50px;
+
+    }
+
+    .signup-form-section {
+        margin: auto;
+    }
+
+    .image-container {
+        max-width: 1250px;
+        
     }
 }
