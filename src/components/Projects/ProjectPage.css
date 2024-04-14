@@ -103,7 +103,9 @@
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 35px;
   background-color: var(--color-light-1);
+  padding: 20px 0px;
   border-radius: var(--border-radius-container);
 }
 
@@ -119,9 +121,6 @@
   gap: 15px;
 }
 
-.rock-image {
-  margin-top: 25px;
-}
 
 @media (min-width: 640px) {
   .fundingProgress {
@@ -139,6 +138,8 @@
   }
 
   .make-pledge-section {
+    border: var(--border-container);
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,7 +172,7 @@
   .rock-image {
     max-width: 100%;
     object-fit: cover;
-    height: 860px;
+    height: 885px;
     min-width: 450px;
   }
 

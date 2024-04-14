@@ -12,7 +12,7 @@
   --font-weight-normal: 400;
   --font-style: normal;
 
-  --border-container: 1px solid var(--color-light-2);
+  --border-container: 2px solid var(--color-light-2);
   --border-button: 1px solid var(--color-light-4);
   --border-radius-container: 10px;
   --border-radius-button: 10px;
@@ -109,7 +109,7 @@ a {
 }
 
 button[type="submit"] {
-  margin-top: 25px;
+  margin: 25px 0px;;
   background-color: var(--color-dark-2);
   color: var(--color-light-1);
   padding: 0.4rem 0.6rem;
