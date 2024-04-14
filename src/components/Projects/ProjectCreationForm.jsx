@@ -15,9 +15,17 @@ function ProjectCreationForm() {
     categories: [],
   });
 
+  const [projectImage, setProjectImage] = useState(null);
+
   const handleChange = (event) => {
     const { id, value } = event.target;
-    if (id === "categories") {
+    if (id === "image") {
+      setProjectImage({
+        image: event.target.files,
+      });
+      console.log(event.target.files);
+    }
+    else if (id === "categories") {
       const selectedCategories = Array.from(
         event.target.selectedOptions,
         (option) => option.text
@@ -40,15 +48,19 @@ function ProjectCreationForm() {
       project.title &&
       project.description &&
       project.goal &&
-      project.image &&
+      projectImage &&
       project.categories.length > 0
     ) {
+      const formData = new FormData();
+      formData.append("title", project.title);
+      formData.append("description", project.description);
+      formData.append("goal", project.goal);
+      formData.append("image", projectImage);
+      project.categories.forEach((category) => {
+        formData.append("categories[]", category);
+      });
       postProject(
-        project.title,
-        project.description,
-        project.goal,
-        project.image,
-        project.categories
+        formData
       ).then((response) => {
         navigate(`/project/${response.id}`);
       });
@@ -87,10 +99,11 @@ function ProjectCreationForm() {
       <div>
         <label htmlFor="image">Project Image:</label>
         <input
-          type="url"
+          accept="image/*"
           id="image"
-          placeholder="Enter Project Image URL"
           onChange={handleChange}
+          name="image"
+          type="file"
         />
       </div>
       <div>
