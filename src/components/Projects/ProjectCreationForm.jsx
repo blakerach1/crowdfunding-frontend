@@ -6,6 +6,7 @@ import "./ProjectCreationForm.css";
 
 function ProjectCreationForm() {
   const navigate = useNavigate();
+  const [projectImage, setProjectImage] = useState(null);
   const { categories } = useCategories();
   const [project, setProject] = useState({
     title: "",
@@ -15,32 +16,33 @@ function ProjectCreationForm() {
     categories: [],
   });
 
-  const [projectImage, setProjectImage] = useState(null);
 
-  const handleChange = (event) => {
-    const { id, value } = event.target;
-    if (id === "image") {
-      setProjectImage({
-        image: event.target.files,
-      });
-      console.log(event.target.files);
-    }
-    else if (id === "categories") {
-      const selectedCategories = Array.from(
-        event.target.selectedOptions,
-        (option) => option.text
-      );
+
+  const handleImageChange = (event) => {
+    const selectedFile = event.target.files;
+    console.log(selectedFile);
+    setProjectImage(selectedFile);
+  };
+
+  const handleCategoriesChange = (event) => {
+    const selectedCategories = Array.from(
+      event.target.selectedOptions,
+      (option) => option.text);
+      console.log(selectedCategories);
       setProject((prevProject) => ({
         ...prevProject,
         categories: selectedCategories,
       }));
-    } else {
+  };
+
+  const handleChange = (event) => {
+    const { id, value } = event.target;
       setProject((prevProject) => ({
         ...prevProject,
         [id]: value,
       }));
-    }
   };
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -57,7 +59,7 @@ function ProjectCreationForm() {
       formData.append("goal", project.goal);
       formData.append("image", projectImage);
       project.categories.forEach((category) => {
-        formData.append("categories[]", category);
+        formData.append("categories", category);
       });
       postProject(
         formData
@@ -101,7 +103,7 @@ function ProjectCreationForm() {
         <input
           accept="image/*"
           id="image"
-          onChange={handleChange}
+          onChange={handleImageChange}
           name="image"
           type="file"
         />
@@ -111,7 +113,7 @@ function ProjectCreationForm() {
         <select
           id="categories"
           value={project.categories}
-          onChange={handleChange}
+          onChange={handleCategoriesChange}
           multiple
         >
           {categories.map((category) => (
