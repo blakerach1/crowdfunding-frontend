@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import postProject from "../../api/post-project";
 import useCategories from "../../hooks/use-categories";
 import { useNavigate } from "react-router-dom";
@@ -16,10 +16,13 @@ function ProjectCreationForm() {
     categories: [],
   });
 
+  useEffect(() => {
+    console.log("project image", projectImage);
+  }, [projectImage]);
 
 
   const handleImageChange = (event) => {
-    const selectedFile = event.target.files;
+    const selectedFile = event.target.files[0];
     console.log(selectedFile);
     setProjectImage(selectedFile);
   };
@@ -28,7 +31,7 @@ function ProjectCreationForm() {
     const selectedCategories = Array.from(
       event.target.selectedOptions,
       (option) => option.text);
-      console.log(selectedCategories);
+      console.log("handle change categories", selectedCategories);
       setProject((prevProject) => ({
         ...prevProject,
         categories: selectedCategories,
@@ -37,6 +40,7 @@ function ProjectCreationForm() {
 
   const handleChange = (event) => {
     const { id, value } = event.target;
+    console.log("handle text field change", event.target);
       setProject((prevProject) => ({
         ...prevProject,
         [id]: value,
@@ -57,7 +61,7 @@ function ProjectCreationForm() {
       formData.append("title", project.title);
       formData.append("description", project.description);
       formData.append("goal", project.goal);
-      formData.append("image", projectImage);
+      formData.append("image", projectImage, projectImage.name);
       project.categories.forEach((category) => {
         formData.append("categories", category);
       });
