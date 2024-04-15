@@ -1,7 +1,18 @@
 .pledgeForm {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.pledge-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.pledgeForm p {
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .pledgeForm h3 {
@@ -31,6 +42,7 @@ input::placeholder {
 }
 
 #pledgeAnonymously {
+  margin-bottom: 10px;;
   display: flex;
   flex-direction: row;
   justify-content: center;

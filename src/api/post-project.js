@@ -1,20 +1,13 @@
-async function postProject(title, description, goal, image, categories) {
+async function postProject(formData) {
   const url = `${import.meta.env.VITE_API_URL}/projects/`;
   const token = window.localStorage.getItem("token");
 
   const response = await fetch(url, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
       "Authorization": `Token ${token}`,
     },
-    body: JSON.stringify({
-      title: title,
-      description: description,
-      goal: goal,
-      image: image,
-      categories: categories,
-    }),
+    body: formData,
   });
 
   if (!response.ok) {

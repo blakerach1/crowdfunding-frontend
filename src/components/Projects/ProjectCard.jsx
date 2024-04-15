@@ -12,7 +12,7 @@ function ProjectCard({ project }) {
         {project.image ? (
           <div className="project-image">
           <img
-          src={project.image}          
+          src={`${import.meta.env.VITE_API_URL}${project.image}`}          
           alt="image of project"
           />
         </div>

@@ -62,7 +62,7 @@ function PledgeCreationForm(props) {
       <h3>Make your Pledge</h3>
       <p>Join many others to support a worthy cause</p>
 
-      <form>
+      <form className="pledge-form">
         <div className="formDiv">
           <label htmlFor="amount">Amount ($):</label>
           <input
