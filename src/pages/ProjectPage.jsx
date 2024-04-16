@@ -40,7 +40,7 @@ function ProjectPage() {
       <section className="projectPage">
       {project.image ? ( 
         <div className="project-img-container">
-          <img src={`${import.meta.env.VITE_API_URL}${project.image}`} alt={project.title} />
+          <img src={project.image} alt={project.title} />
         </div>
       ) : (
         <div className="project-img-container">

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import postProject from "../../api/post-project";
 import useCategories from "../../hooks/use-categories";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,6 @@ import "./ProjectCreationForm.css";
 
 function ProjectCreationForm() {
   const navigate = useNavigate();
-  const [projectImage, setProjectImage] = useState(null);
   const { categories } = useCategories();
   const [project, setProject] = useState({
     title: "",
@@ -16,35 +15,24 @@ function ProjectCreationForm() {
     categories: [],
   });
 
-  useEffect(() => {
-    console.log("project image", projectImage);
-  }, [projectImage]);
 
-
-  const handleImageChange = (event) => {
-    const selectedFile = event.target.files[0];
-    console.log(selectedFile);
-    setProjectImage(selectedFile);
-  };
-
-  const handleCategoriesChange = (event) => {
-    const selectedCategories = Array.from(
-      event.target.selectedOptions,
-      (option) => option.text);
-      console.log("handle change categories", selectedCategories);
+  const handleChange = (event) => {
+    const { id, value } = event.target;
+    if (id === "categories") {
+      const selectedCategories = Array.from(
+        event.target.selectedOptions,
+        (option) => option.text
+      );
       setProject((prevProject) => ({
         ...prevProject,
         categories: selectedCategories,
       }));
-  };
-
-  const handleChange = (event) => {
-    const { id, value } = event.target;
-    console.log("handle text field change", event.target);
+    } else {
       setProject((prevProject) => ({
         ...prevProject,
         [id]: value,
       }));
+    }
   };
 
 
@@ -54,19 +42,15 @@ function ProjectCreationForm() {
       project.title &&
       project.description &&
       project.goal &&
-      projectImage &&
+      project.image &&
       project.categories.length > 0
     ) {
-      const formData = new FormData();
-      formData.append("title", project.title);
-      formData.append("description", project.description);
-      formData.append("goal", project.goal);
-      formData.append("image", projectImage, projectImage.name);
-      project.categories.forEach((category) => {
-        formData.append("categories", category);
-      });
       postProject(
-        formData
+        project.title,
+        project.description,
+        project.goal,
+        project.image,
+        project.categories
       ).then((response) => {
         navigate(`/project/${response.id}`);
       });
@@ -105,11 +89,10 @@ function ProjectCreationForm() {
       <div>
         <label htmlFor="image">Project Image:</label>
         <input
-          accept="image/*"
+          type="url"
           id="image"
-          onChange={handleImageChange}
-          name="image"
-          type="file"
+          placeholder="Enter Project Image URL"
+          onChange={handleChange}
         />
       </div>
       <div>
@@ -117,7 +100,7 @@ function ProjectCreationForm() {
         <select
           id="categories"
           value={project.categories}
-          onChange={handleCategoriesChange}
+          onChange={handleChange}
           multiple
         >
           {categories.map((category) => (
@@ -132,4 +115,6 @@ function ProjectCreationForm() {
   );
 }
 
+
 export default ProjectCreationForm;
+
