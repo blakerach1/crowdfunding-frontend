@@ -1,0 +1,34 @@
+.pledge-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0px;
+    
+}
+
+.pledge-container p {
+    max-width: 150px;
+    text-align: center;
+}
+
+.pledge-edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 60%;
+    background-color: var(--color-light-2);
+    border-radius: var(--border-radius-container);
+    margin: 25px;
+    padding: 10px;
+}
+
+.pledge-edit-form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+

@@ -16,12 +16,16 @@ function PledgeCard({ pledge, index }) {
         <ul>
             <li>
                 <Link to={`/pledges/${pledge.id}`}>
-                    <SupporterName userId={pledge.supporter} />
-                    <p>{formatCurrency(pledge.amount)}</p>
-                    <p className="pledgedAgo">
-                    Pledged: {formatTimeAgo(pledge.pledge_date)}
-                    </p>
-                    <p>Comment: {pledge.comment}</p>
+                {pledge.anonymous ? (
+                <p>Anonymous</p>
+                ) : (
+                <SupporterName userId={pledge.supporter} />
+                )}
+                <p>{formatCurrency(pledge.amount)}</p>
+                <p className="pledgedAgo">
+                Pledged: {formatTimeAgo(pledge.pledge_date)}
+                </p>
+                <p>Comment: {pledge.comment}</p>
                 </Link>
             </li>
         </ul>

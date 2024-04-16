@@ -7,10 +7,14 @@
   margin: auto;
 }
 
-.project-img-container img {
-  width: 800px;
-  height: 430px;
+/* .project-img-container img {
+  max-width: 430px;
+  height: 350px;
   object-fit: cover;
+} */
+
+.project-img-container {
+  display: flex;
 }
 
 .project-info {

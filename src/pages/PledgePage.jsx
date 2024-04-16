@@ -1,12 +1,15 @@
 import EditPledgeForm from "../components/Pledges/PledgeEditForm";
 import usePledge from "../hooks/use-pledge";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import SupporterName from "../components/Pledges/Supporter";
 import { formatCurrency } from "../utils/FormatFunctions";
+import "./PledgePage.css";
 
 function PledgePage() {
   const { id } = useParams();
   const { pledge, setPledge, isLoading, error } = usePledge(id);
+  const [isEditing, setIsEditing] = useState(false);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -18,20 +21,25 @@ function PledgePage() {
 
   const handlePledgeUpdate = (updatedPledgeData) => {
     setPledge(updatedPledgeData);
+    setIsEditing(false); // hide edit form after updating pledge
   };
 
   return (
-    <div>
-      <p>{formatCurrency(pledge.amount)}</p>
-      <p>{pledge.comment}</p>
+    <div className="pledge-container">
+      <p>Amount Pledged: {formatCurrency(pledge.amount)}</p>
+      <p>Comment: {pledge.comment}</p>
       {/* if not anonymous, show supporter name */}
       {pledge.anonymous ? (
-        <p>Anonymous</p>
+        <p>Supporter: Anonymous</p>
       ) : (
         <SupporterName userId={pledge.supporter} />
       )}
-      {/* on click of edit button, show edit form */}
+      <button onClick={() => setIsEditing(!isEditing)}>
+        {isEditing ? "Cancel" : "Edit Pledge"}
+      </button>
+      {isEditing && (
       <EditPledgeForm pledge={pledge} onUpdate={handlePledgeUpdate} />
+      )}
     </div>
   );
 }

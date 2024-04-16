@@ -12,7 +12,6 @@ function EditPledgeForm({ pledge, onUpdate }) {
     supporter: pledge.supporter,
   });
 
-  console.log("edit form pledge", pledge);
 
   const handleChange = (event) => {
     const { id, type } = event.target;
@@ -23,8 +22,6 @@ function EditPledgeForm({ pledge, onUpdate }) {
       [id]: value,
     }));
   };
-
-  console.log("updated pledge", updatedPledge);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,7 +49,7 @@ function EditPledgeForm({ pledge, onUpdate }) {
   };
 
   return (
-    <form>
+    <form className="pledge-edit-form">
       <div>
         <p>Pledge Amount ($): {pledge.amount}</p>
       </div>
