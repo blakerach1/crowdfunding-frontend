@@ -76,7 +76,7 @@ function PledgeCreationForm(props) {
         <div className="formDiv">
           <label htmlFor="comment">Words of Support <span>(optional)</span></label>
           <input
-            type="text"
+            type="textarea"
             id="comment"
             value={pledge.comment}
             placeholder="Enter Comment"

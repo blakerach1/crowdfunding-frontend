@@ -25,7 +25,12 @@
 #comment {
   border-radius: 4px;
   margin-bottom: 25px;
-  padding-bottom: 20em;
+  padding-bottom: 5em;
+
+  min-width: 200px;
+  min-height: 100px;
+  overflow: auto;
+  word-wrap: break-word;
 }
 
 .formDiv {

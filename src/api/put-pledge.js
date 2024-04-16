@@ -6,7 +6,7 @@ async function putPledge(
   project,
   supporter
 ) {
-  const url = `${import.meta.env.VITE_API_URL}/pledges/${pledgeId}`;
+  const url = `${import.meta.env.VITE_API_URL}/pledges/${pledgeId}/`;
   const token = window.localStorage.getItem("token");
 
   // add try catch, wrap it over the entire response

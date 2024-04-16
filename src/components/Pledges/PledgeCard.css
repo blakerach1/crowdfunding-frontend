@@ -11,6 +11,11 @@
     text-align: center;
 }
 
+.pledge-card p:first-child {
+    font-weight: var(--font-weight-extra-heavy);
+    margin: 5px 0px;
+}
+
 .pledge-card ul {
     list-style: none;
     padding-inline-start: 0px;

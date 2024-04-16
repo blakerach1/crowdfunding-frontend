@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import postSignUp from "../../api/post-signup";
+import postLogin from "../../api/post-login";
+import useAuth from "../../hooks/use-auth";
 import { Link } from "react-router-dom";
 import "./SignUpForm.css";
 
 function SignUpForm() {
   const navigate = useNavigate();
+  const { auth, setAuth } = useAuth();
 
   const [credentials, setCredentials] = useState({
     username: "",
@@ -38,9 +41,14 @@ function SignUpForm() {
         credentials.last_name,
         credentials.email,
         credentials.password
-      ).then((response) => {
-        setCredentials(response);
-        navigate("/");
+      ).then(() => {
+        postLogin(credentials.username, credentials.password).then((response) => {
+          window.localStorage.setItem("token", response.token);
+          window.localStorage.setItem("user_id", response.user_id);
+          window.localStorage.setItem("is_staff", response.is_staff);
+          setAuth({ token: response.token, user_id: response.user_id, is_staff: response.is_staff });
+          navigate("/");
+        });        
       });
     }
   };
