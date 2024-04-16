@@ -53,7 +53,11 @@ function ProjectCreationForm() {
         project.categories
       ).then((response) => {
         navigate(`/project/${response.id}`);
+      }).catch((error) => {
+        window.alert(error.message);
       });
+    } else {
+      window.alert("All fields are required to be filled out before you can create a project.");
     }
   };
 
