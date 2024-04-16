@@ -1,5 +1,5 @@
 /* Generic form styling */
-login-form {
+.login-form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;

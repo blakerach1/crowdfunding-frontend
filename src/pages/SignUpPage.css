@@ -21,6 +21,14 @@
     text-decoration: underline;
 }
 
+.signup-form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
 @media (min-width: 640px) {
     .signup-page-contents {
         display: flex;
@@ -43,8 +51,12 @@
 
 @media (min-width: 800px) {
     .signupForm {
-        min-width: 25rem;
+        min-width: 20rem;
         align-self: center;
+    }
+
+    .signup-form-section {
+        min-width: 400px;
     }
 }
 
