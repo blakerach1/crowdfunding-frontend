@@ -10,6 +10,7 @@ select {
   font-family: inherit;
   font-weight: 400;
   color: var(--color-dark-2);
+  min-height: 150px;
 }
 
 

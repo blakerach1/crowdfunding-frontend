@@ -30,6 +30,8 @@ function LoginForm() {
         window.localStorage.setItem("is_staff", response.is_staff);
         setAuth({ token: response.token, user_id: response.user_id, is_staff: response.is_staff });
         navigate("/");
+      }).catch((error) => {
+        alert(error.message);
       });
     }
   };
