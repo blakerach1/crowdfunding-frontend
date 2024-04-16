@@ -26,12 +26,9 @@
   border-radius: 4px;
   margin-bottom: 25px;
   padding-bottom: 5em;
-
-  min-width: 200px;
-  min-height: 100px;
-  overflow: auto;
-  word-wrap: break-word;
+  width: 100%;
 }
+
 
 .formDiv {
   width: 100%;
