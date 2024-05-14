@@ -15,7 +15,7 @@ function HeroBanner() {
                 />
             <div className="hero-banner-text">
                 <h4><strong>Community-driven investment is at the heart of CrowdHarbour.</strong></h4>
-                <p>Our platform is dedicated to hosting projects that champion<span>positive social impact.</span></p>
+                <p>Our platform is dedicated to hosting projects that champion<span> positive social impact.</span></p>
                 <p>Unlike traditional investing, where shareholders may feel disconnected, CrowdHarbour investors are deeply engaged with the causes they support.</p>
                 <p>Whether you're a passionate advocate, a loyal supporter, or simply someone who believes in making a difference, CrowdHarbour connects you with projects that align with your values. Together, we can empower businesses to thrive and make meaningful contributions to society.</p>
             </div>
